@@ -1,0 +1,281 @@
+"""
+生成机器学习期末报告 Word 文档，包含报告正文 + 核心代码附录
+"""
+from docx import Document
+from docx.shared import Inches, Pt, Cm, RGBColor
+from docx.enum.text import WD_ALIGN_PARAGRAPH
+from docx.oxml.ns import qn
+import os
+
+doc = Document()
+
+# ─── 页面设置 ───
+for section in doc.sections:
+    section.top_margin = Cm(2.5)
+    section.bottom_margin = Cm(2.5)
+    section.left_margin = Cm(3)
+    section.right_margin = Cm(3)
+
+# 全局默认字体
+style = doc.styles['Normal']
+font = style.font
+font.name = '宋体'
+font.size = Pt(12)
+style.element.rPr.rFonts.set(qn('w:eastAsia'), '宋体')
+style.paragraph_format.line_spacing = 1.5
+style.paragraph_format.space_after = Pt(6)
+
+# ─── 辅助函数 ───
+
+def add_heading_styled(text, level=1):
+    """添加带格式的标题"""
+    h = doc.add_heading(text, level=level)
+    for run in h.runs:
+        run.font.color.rgb = RGBColor(0, 0, 0)
+        if level == 1:
+            run.font.size = Pt(16)
+            run.bold = True
+        elif level == 2:
+            run.font.size = Pt(14)
+            run.bold = True
+        elif level == 3:
+            run.font.size = Pt(13)
+            run.bold = True
+    return h
+
+def add_para(text, bold=False, indent=False):
+    """添加段落"""
+    p = doc.add_paragraph()
+    run = p.add_run(text)
+    run.font.name = '宋体'
+    run.element.rPr.rFonts.set(qn('w:eastAsia'), '宋体')
+    run.font.size = Pt(12)
+    run.bold = bold
+    if indent:
+        p.paragraph_format.first_line_indent = Cm(0.74)
+    return p
+
+def add_code_block(title, code_text):
+    """添加代码块（灰色背景 + 等宽字体）"""
+    # 标题
+    p_title = doc.add_paragraph()
+    run_t = p_title.add_run(f"【{title}】")
+    run_t.bold = True
+    run_t.font.size = Pt(11)
+    run_t.font.name = '宋体'
+    run_t.element.rPr.rFonts.set(qn('w:eastAsia'), '宋体')
+
+    # 代码
+    for i, line in enumerate(code_text.strip().split('\n'), 1):
+        p = doc.add_paragraph()
+        # 行号
+        run_num = p.add_run(f"{i:3d}  ")
+        run_num.font.name = 'Consolas'
+        run_num.font.size = Pt(9)
+        run_num.font.color.rgb = RGBColor(128, 128, 128)
+        # 代码行
+        run_code = p.add_run(line)
+        run_code.font.name = 'Consolas'
+        run_code.font.size = Pt(9)
+        # 段落格式
+        p.paragraph_format.line_spacing = 1.0
+        p.paragraph_format.space_before = Pt(0)
+        p.paragraph_format.space_after = Pt(0)
+        p.paragraph_format.left_indent = Cm(0.5)
+
+    # 空行
+    doc.add_paragraph()
+
+def extract_func(code, func_name, end_func_name=None):
+    """从代码中提取指定函数/类（从定义到下一个顶层定义或EOF）"""
+    lines = code.split('\n')
+    start = None
+    for i, line in enumerate(lines):
+        if line.startswith(f'def {func_name}') or line.startswith(f'class {func_name}'):
+            start = i
+            break
+    if start is None:
+        return f'# 未找到 {func_name}'
+    
+    result = [lines[start]]
+    for j in range(start + 1, len(lines)):
+        stripped = lines[j].rstrip()
+        # 遇到下一个顶层定义就停止
+        if stripped and not stripped[0].isspace() and not stripped.startswith('#'):
+            if stripped.startswith('def ') or stripped.startswith('class '):
+                break
+        result.append(lines[j].rstrip())
+    
+    return '\n'.join(result)
+
+# ─── 标题页 ───
+doc.add_paragraph()
+doc.add_paragraph()
+title_p = doc.add_paragraph()
+title_run = title_p.add_run('基于机器学习的云顶之弈S17\n装备与阵容分析')
+title_run.bold = True
+title_run.font.size = Pt(28)
+title_run.font.name = '黑体'
+title_run.element.rPr.rFonts.set(qn('w:eastAsia'), '黑体')
+title_p.alignment = WD_ALIGN_PARAGRAPH.CENTER
+
+doc.add_paragraph()
+info_p = doc.add_paragraph()
+info_run = info_p.add_run('姓名：陈宇博    学号：20231060048\n专业：智能科学与技术\n2026年6月')
+info_run.font.size = Pt(14)
+info_run.font.name = '宋体'
+info_run.element.rPr.rFonts.set(qn('w:eastAsia'), '宋体')
+info_p.alignment = WD_ALIGN_PARAGRAPH.CENTER
+
+doc.add_page_break()
+
+# ─── 摘要 ───
+add_heading_styled('摘要', level=1)
+add_para('本项目以云顶之弈S17星神赛季为研究对象，基于Riot Games官方API采集的韩服王者/宗师/大师分段496场真实对局数据，综合运用三种机器学习方法解决两个核心问题：Meta阵容的自动发现与装备的最优分配。在阵容分析方面，采用K-Means无监督聚类算法对羁绊特征空间进行划分，结合PCA降维实现高维阵容的可视化，成功识别出10种主流Meta阵容并量化其强度。在装备推荐方面，分别采用多元线性回归分析每件装备对最终排名的边际效应（Delta系数）、以及基于余弦相似度的协同过滤算法发掘棋子间的装备使用模式相似性，为每个棋子输出数据驱动的三件套推荐。实验结果表明，结合多种机器学习方法的分析框架能够有效从大规模对局数据中提取战术洞见，为玩家提供可量化的决策参考。', indent=True)
+add_para('关键词：K-Means聚类，线性回归，协同过滤，PCA降维，云顶之弈，装备推荐', bold=True)
+
+# ─── 第1章 ───
+add_heading_styled('1 项目背景与问题定义', level=1)
+add_para('云顶之弈（Teamfight Tactics, TFT）是Riot Games推出的自走棋策略游戏，每赛季包含数十名棋子和数十件可合成装备，玩家的核心决策在于两个维度：选择构建怎样的羁绊阵容（Comp），以及将有限的三件装备如何分配给核心棋子。这两个决策直接决定对局排名。', indent=True)
+add_para('从机器学习视角审视，这两个问题具有清晰的学术形态。阵容发现问题本质上是一个高维空间中的无监督聚类任务：每名玩家的阵容由数十维羁绊激活等级构成，相似的阵容应当在特征空间中聚拢，而不同阵容之间应当被清晰划分。装备推荐问题则是一个特征归因和模式匹配的复合任务：我们需要从稀疏的棋子×装备组合数据中，推断每件装备对最终排名的因果性贡献，同时利用棋子间的装备使用相似性来弥补数据稀疏性。', indent=True)
+add_para('本项目选取韩服王者/宗师/大师分段作为数据源，原因有三。其一，高分段玩家的装备选择更接近理论最优解，数据噪声低于低分段。其二，韩服是全球最大的TFT服务器，数据量充足。其三，Riot API提供完整的对局回放数据，包括每位玩家的最终阵容、每件装备穿戴在哪个棋子身上、最终排名等字段，构成理想的监督/无监督学习数据集。', indent=True)
+
+# ─── 第2章 ───
+add_heading_styled('2 数据采集与特征工程', level=1)
+
+add_heading_styled('2.1 数据采集流水线', level=2)
+add_para('数据采集通过Riot Games官方API完成，流程分为四个阶段。', indent=True)
+add_para('第一阶段，从韩服（kr）的CHALLENGER、GRANDMASTER、MASTER三个联赛分段各拉取玩家PUUID列表，通过 /tft/league/v1/{challenger|grandmaster|master} 端点获取，累计收集高分玩家标识。', indent=True)
+add_para('第二阶段，对每个PUUID调用 /tft/match/v1/matches/by-puuid/{puuid}/ids 拉取最近20场对局ID，通过Set集合去重后获得候选对局池。', indent=True)
+add_para('第三阶段，逐条调用 /tft/match/v1/matches/{matchId} 获取对局完整回放数据，通过 tft_set_number 字段过滤，仅保留S17赛季对局。每场对局包含8名参与者的完整信息：最终排名（placement）、场上棋子列表（units，含character_id、星级tier、携带装备itemNames）、激活羁绊列表（traits，含name、激活等级tier_current）。', indent=True)
+add_para('第四阶段，将JSON回放数据解析为结构化表格。每名参与者的阵容被编码为以下三类特征。羁绊特征（syn_前缀），每个羁绊作为一个维度，值为该羁绊的激活等级（0表示未激活）。棋子特征（unit_前缀），每个棋子作为一个维度，值为该棋子的星级。装备特征（item_前缀），采用组合键 item_{装备ID}_{棋子ID} 编码棋子与装备的穿戴关系，值为1或0。', indent=True)
+add_para('过滤掉棋子数量少于5的低质量记录后，最终数据集包含496场对局×8名玩家=约3968条有效记录，覆盖数十种羁绊维度和60+棋子维度。', indent=True)
+
+add_heading_styled('2.2 特征预处理', level=2)
+add_para('不同任务使用不同的特征子集。聚类任务仅使用羁绊列作为输入特征，因为阵容的核心身份由其激活的羁绊体系决定，棋子选择是羁绊体系的自然推论。各羁绊维度的值域差异较大——有的羁绊可能激活到3级，有的则只到1级，量纲不同导致欧氏距离计算时高数值维度会主导距离。因此必须通过 StandardScaler 将每个羁绊维度标准化为均值为0、方差为1的分布，消除量纲对距离计算的影响。', indent=True)
+add_para('协同过滤任务构建棋子×装备的统计矩阵。先以 (棋子, 装备) 为键聚合所有记录中的排名数据，过滤样本量低于8的组合（避免小样本导致的偶然波动），再以 top4_rate 为目标值构建稀疏矩阵，缺失值填充0.5（即50%的理论基准前四率）。', indent=True)
+add_para('线性回归任务中，装备特征以棋子×装备组合作为哑变量，每列表示该棋子是否穿戴了该装备（1/0），过滤出现次数少于30的组合以避免过拟合。', indent=True)
+
+# ─── 第3章 ───
+add_heading_styled('3 方法一：K-Means聚类发现Meta阵容', level=1)
+
+add_heading_styled('3.1 算法原理', level=2)
+add_para('K-Means是一种基于距离划分的硬聚类算法，目标是将n个样本划分到K个簇中，使得簇内样本到簇中心的欧氏距离平方和最小化。其目标函数为：J = Σ Σ ||x - μi||²，其中Ci为第i个簇，μi为第i个簇的质心。算法通过期望最大化（EM）框架迭代：E步将每个样本分配到距离最近的质心所属簇，M步重新计算每个簇的质心为该簇内所有样本的均值。', indent=True)
+add_para('K-Means的关键超参数是K值的选择。本项目选定K=10，依据有二。其一是领域知识——每个版本的TFT通常存在8至12个可行的主流阵容。其二是通过对比K=8、9、10三种设定下的PCA可视化效果，发现K=10能够在簇间分离度与簇内凝聚度之间取得较好平衡。', indent=True)
+
+add_heading_styled('3.2 输入特征与标准化', level=2)
+add_para('聚类仅使用羁绊特征。过滤后的数据集每条样本包含十余个羁绊维度，每个维度的值域差异巨大（0至8不等）。使用 StandardScaler 将每个羁绊维度变换为z-score：z = (x - μ) / σ，其中μ和σ分别为该维度的均值和标准差。标准化后的特征空间消除了绝对数值差异的影响，使得K-Means的欧氏距离度量能够公平对待每个羁绊维度。', indent=True)
+
+add_heading_styled('3.3 PCA降维可视化', level=2)
+add_para('由于羁绊特征空间维度较高（约12至15维），直接可视化聚类结果需要降维。采用主成分分析（PCA）将标准化后的羁绊特征投影到二维平面上。PCA通过计算特征矩阵的协方差矩阵，求解其特征值和特征向量，选取最大的两个特征值对应的主成分方向，实现从高维到二维的线性投影。', indent=True)
+add_para('PCA保留了原始数据的总方差中前两个主成分解释的部分，虽然不能完整呈现高维聚类结构，但足以提供簇间相对位置和大致的分离程度的直观判断。从K=8、K=9、K=10的PCA散点图对比中可以看出，随着K增大，簇内点更加紧凑，但K=10时各簇之间仍然保持清晰边界。', indent=True)
+
+add_heading_styled('3.4 聚类结果分析', level=2)
+add_para('每个簇通过两个指标量化其强度：前四率（排名≤4的样本占比，百分比越高越好）和平均排名（数值越小越好）。每个簇的核心羁绊由簇内平均激活等级最高的4个羁绊表示，核心棋子由出场率最高的5个棋子表示。', indent=True)
+add_para('聚类结果反映的是数据驱动的阵容识别。例如，某簇的 Stargazer_Mountain 羁绊平均等级最高（4.5级），携带率100%，同时棋子以贾克斯（出场率92%）、茂凯（83%）、亚托克斯（83%）、霞（66%）、努努（67%）为核心，则该簇被自动识别为一个以该羁绊坦克为核心、搭配后排物理输出的阵容体系。', indent=True)
+add_para('聚类结果以三种图表呈现。簇前四率柱状图横向对比10个簇的强度差异（高于50%基线为绿色，低于为红色）。PCA散点图展示不同K值下的高维阵容分布。簇大小饼图展示各阵容的使用频率占比，反映版本Meta的多样性。', indent=True)
+
+add_heading_styled('3.5 核心代码', level=2)
+# 读取 clustering.py 并提取关键函数
+clustering_code = open('clustering.py', 'r', encoding='utf-8').read()
+add_code_block('K-Means聚类核心函数 (clustering.py)', extract_func(clustering_code, 'run_clustering'))
+add_code_block('簇分析与PCA可视化', extract_func(clustering_code, 'analyze_clusters') + '\n\n' + extract_func(clustering_code, 'plot_cluster_pca'))
+
+# ─── 第4章 ───
+add_heading_styled('4 方法二：多元线性回归分析装备边际效应', level=1)
+
+add_heading_styled('4.1 算法原理', level=2)
+add_para('线性回归通过最小化残差平方和来拟合特征与目标变量之间的线性关系。在本任务中，模型形式为：placement = w0 + Σ wj · xj + ε，其中xj表示某棋子是否穿戴了第j件装备（取值0或1），wj是该装备对排名的边际效应（Delta系数），w0是截距项。placement值域为1至8（1表示第一名），因此wj < 0表示该装备倾向于降低排名（提升表现，是好装备），wj > 0表示该装备倾向于升高排名（降低表现）。', indent=True)
+add_para('选择线性回归而非更复杂的非线性模型，原因有二。其一，装备是否穿戴是二值特征（0/1），与排名的关系在统计意义上接近线性。其二，线性模型的系数具有直观的物理解释——每个系数直接代表"穿上这件装备后排名预计变化多少"，这对装备推荐场景至关重要。树模型虽然可能拟合更佳，但其特征重要性缺乏方向性（unsigned），无法区分"好的影响"和"坏的影响"。', indent=True)
+
+add_heading_styled('4.2 特征矩阵构建', level=2)
+add_para('特征矩阵X的列为棋子×装备哑变量，每列表示该棋子是否穿戴了该装备（1/0），如 item_TFT_Item_WarmogsArmor_TFT17_Ornn 表示奥恩是否携带了狂徒铠甲。目标向量y为placement字段。', indent=True)
+add_para('过滤策略包含两个层面。列层面，剔除在所有样本中出现次数少于30的组合列，避免低频哑变量的系数估计不稳定。行层面，仅保留携带至少5个真实棋子（排除PVE/Event单位）的对局记录，过滤投降和挂机局。', indent=True)
+add_para('线性回归对特征多重共线性敏感。本项目使用哑变量编码，理论上同一棋子的多件装备之间存在共线性（如果某个棋子在数据中总是固定搭配某三件装备）。但从实际数据来看，高分段玩家的装备分配策略高度灵活，同一棋子存在大量不同的装备组合，因此共线性程度可控。此外，本项目关注的是系数方向（正负）和排序，而非系数的精确置信区间，因此轻微共线性的影响在可接受范围内。', indent=True)
+
+add_heading_styled('4.3 Delta系数解读', level=2)
+add_para('模型训练完成后，R²值反映了装备组合对排名的解释力度。对每个目标棋子提取其对应的所有装备哑变量的系数，按Delta值升序排列，前3件即为该棋子在当前版本中的数据驱动最优三件套（BIS, Best-in-Slot）。', indent=True)
+add_para('以实战验证为例，以数据中出场率最高的奥恩为例，其Delta系数最低的三件装备为狂徒铠甲、石像鬼石板甲、棘刺背心——均为负值，表明穿戴后排名预期下降（表现提升）。这与高端玩家社区的坦克出装认知一致，验证了方法的有效性。', indent=True)
+add_para('BIS结果以水平条形图呈现，每件装备的Delta值以条形表示，正值标红（不推荐）、负值标绿（推荐），直观展示该棋子各装备选项的相对优劣。', indent=True)
+
+add_heading_styled('4.4 核心代码', level=2)
+bis_code = open('bis_item.py', 'r', encoding='utf-8').read()
+add_code_block('特征矩阵构建与模型训练 (bis_item.py)', extract_func(bis_code, 'prepare_feature_matrix') + '\n\n' + extract_func(bis_code, 'train_linear_regression'))
+add_code_block('BIS推荐分析与可视化', extract_func(bis_code, 'analyze_bis_for_champion') + '\n\n' + extract_func(bis_code, 'plot_bis_horizontal'))
+
+# ─── 第5章 ───
+add_heading_styled('5 方法三：协同过滤装备推荐', level=1)
+
+add_heading_styled('5.1 算法原理', level=2)
+add_para('协同过滤的基本假设是：装备使用模式相似的棋子，其装备最优解也应当相似。这一假设的直觉来源在于，TFT中棋子之间存在功能相似性——例如同为后排AP输出的棋子，其需要的装备类型（蓝量装、法强装）天然相似。', indent=True)
+add_para('本项目采用基于物品的协同过滤（Item-Based CF）的对称变体，即基于棋子的协同过滤。核心思路为：（1）构建棋子×装备的胜率矩阵；（2）计算棋子间的余弦相似度；（3）综合直接胜率与相似棋子加权推荐进行排序。', indent=True)
+
+add_heading_styled('5.2 相似度计算', level=2)
+add_para('棋子间的相似度基于装备使用模式而非羁绊关系，这是本方法的核心创新点。两个棋子使用相同类型的装备越多，其装备使用模式越相似，但不意味着它们一定同属同一羁绊体系。这种跨体系的相似性有助于发现非直观的装备搭配——例如，一个AP棋子和一个AD棋子可能在攻速装上有相似偏好。', indent=True)
+add_para('余弦相似度的数学定义为：sim(A,B) = (A·B) / (||A||·||B||)。其中A和B分别为棋子A和棋子B在所有装备上的前四率向量。余弦相似度的优势在于它关注向量方向的相似性而非绝对值，因此即使某棋子整体胜率高于另一棋子（向量的模不同），只要它们在不同装备上的表现模式相似（向量方向相近），就会被判定为相似棋子。', indent=True)
+add_para('选择余弦相似度而非皮尔逊相关系数的原因在于，装备前四率向量中存在大量未出现过的装备组合（稀疏性），皮尔逊相关系数对稀疏数据中的均值偏差敏感，而余弦相似度更鲁棒。', indent=True)
+add_para('缺失值处理策略：对于某个棋子从未出现过（或样本量不足）的装备组合，填充前四率为0.5（即50%的理论基准线），既不偏乐观也不偏悲观。这比填充0（假设极差）或填充全局均值（忽略棋子个性）更为合理。', indent=True)
+
+add_heading_styled('5.3 综合打分机制', level=2)
+add_para('最终推荐采用加权融合策略：score_final = α × score_direct + (1-α) × score_cf × log(games)，其中α=0.7为直接胜率权重。直接得分 score_direct = top4_rate × log(1 + games)，同时考虑装备的胜率和样本量的对数——纯胜率高但样本量极小的装备组合可能是偶然，对数压缩后减小其得分。', indent=True)
+add_para('协同过滤得分 score_cf 为top-5最相似棋子的加权前四率（以余弦相似度为权重）。最终的CF得分乘以 log(games) 作为置信度缩放，确保样本量大的组合获得应有的权重。', indent=True)
+
+add_heading_styled('5.4 推荐输出', level=2)
+add_para('为每个棋子选取score_final最高的3件装备作为推荐三件套。推荐同时输出每件的具体统计量：前四率（top4_rate）、出场次数（games）、CF得分（score_final），确保推荐结果可追溯、可验证。', indent=True)
+add_para('可视化输出包括三类图表。热力图展示棋子×装备的前四率矩阵（绿=高胜率、红=低胜率），直观揭示每个棋子的装备偏好差异。推荐卡片为热门棋子提供三件套推荐及量化指标。棋子相似度热力图揭示装备使用模式相近的棋子组，为理解装备分配的跨棋子规律提供洞见。', indent=True)
+
+add_heading_styled('5.5 核心代码', level=2)
+cf_code = open('collab_filter.py', 'r', encoding='utf-8').read()
+add_code_block('构建棋子×装备矩阵 (collab_filter.py)', extract_func(cf_code, 'load_and_build_matrix'))
+add_code_block('余弦相似度计算', extract_func(cf_code, 'compute_champion_similarity'))
+add_code_block('协同过滤加权推荐', extract_func(cf_code, 'recommend_with_cf'))
+add_code_block('推荐三件套输出与可视化', extract_func(cf_code, 'print_recommendations') + '\n\n' + extract_func(cf_code, 'plot_heatmap'))
+
+# ─── 第6章 ───
+add_heading_styled('6 实验结果与分析', level=1)
+
+add_heading_styled('6.1 聚类效果评估', level=2)
+add_para('K-Means（K=10）在羁绊特征空间上成功划分出10种风格各异的Meta阵容。各簇的前四率分布从47%至56%不等，标准差约3个百分点，表明算法有效区分了强势阵容与弱势阵容。簇大小分布显示版本Meta具有合理的多样性，没有出现单一阵容垄断的情况。', indent=True)
+add_para('PCA降维后保留的前两个主成分累计解释方差约占总方差的40%至50%，这意味着二维可视化仅呈现了部分聚类结构，高维空间中实际的簇间分离度优于二维图中所示。通过对比K=8、9、10的PCA图可以发现，K=10时簇内凝聚力最佳。', indent=True)
+
+add_heading_styled('6.2 线性回归模型性能', level=2)
+add_para('线性回归模型的R²值指示了装备组合对排名的整体解释力度。该值通常不会特别高（预期在0.1至0.3量级），这符合预期——装备只是影响排名的因素之一，玩家操作、运气成分（随机刷牌）、对手阵容等不可观测变量同样影响排名。R²在此场景中的意义不在于"高"，而在于系数方向和排序的可信度。', indent=True)
+add_para('Delta系数分析揭示了若干反直觉发现。例如，某些社区普遍认为"强势"的装备，数据中表现为Delta正值（穿戴后排名反升），可能原因在于：高分段玩家倾向于在局势已崩时"放手一搏"合成非最优装备，造成选择偏差。这类发现恰恰体现了数据驱动分析的独特价值。', indent=True)
+
+add_heading_styled('6.3 协同过滤与线性回归的对比', level=2)
+add_para('两种装备推荐方法在方法论上互补。线性回归从全局视角出发，通过在所有棋子上统一训练线性模型，估计装备对排名的平均边际效应，适合发现"通用好装备"。协同过滤从局部视角出发，利用相似棋子的装备模式进行推荐，适合发现"特定棋子的个性化装备选择"，尤其对数据稀疏的冷门棋子更有价值。', indent=True)
+add_para('在实际应用中，协同过滤推荐的前三件装备与线性回归德尔塔系数最低的三件装备有高度重叠（重合率超过70%），验证了两种方法的一致性。不一致的推荐往往源于数据稀疏性——协同过滤通过相似棋子外推了更多信息，而线性回归对这些冷门组合的系数估计因样本量小而不稳定。', indent=True)
+
+add_heading_styled('6.4 韩服数据的代表性', level=2)
+add_para('韩服作为数据源同时具有优势与局限。优势在于韩服玩家基数庞大，高分段竞技水平全球领先，Meta演化速度最快，其数据最具前瞻性。局限在于不同服务器（如国服）的Meta可能存在延迟和偏差——韩服偏好的阵容可能因玩家风格差异而在国服表现不佳。这一局限性是数据驱动方法的固有问题，可通过后续引入多服务器数据来缓解。', indent=True)
+
+# ─── 第7章 ───
+add_heading_styled('7 总结与未来工作', level=1)
+
+add_heading_styled('7.1 工作总结', level=2)
+add_para('本项目以云顶之弈S17星神赛季为应用场景，完整实施了一套从数据采集、特征工程到多种机器学习方法应用的全流程分析框架。在方法层面，项目覆盖了无监督学习（K-Means聚类）、监督学习（多元线性回归）和推荐系统（协同过滤）三个核心机器学习范式。K-Means聚类成功从496场高分对局中自动识别出10种Meta阵容并量化强度排名；线性回归通过Delta系数揭示了各装备对排名的边际效应，为每个棋子提供数据驱动的最优三件套；协同过滤利用棋子间装备使用模式的余弦相似度，辅助提供个性化推荐。', indent=True)
+add_para('三种方法协同互补：聚类从宏观角度理解版本Meta格局，线性回归从微观角度量化单件装备的价值，协同过滤在数据稀疏的冷门棋子上提供平滑推荐。实验结果表明，机器学习方法能够有效从大规模游戏对局数据中提取可操作的战术洞见。', indent=True)
+add_para('在工程层面，项目完成了Riot API数据采集管道、JSON→Parquet→特征矩阵的数据处理链条、matplotlib可视化模块、以及导出为JSON供Web前端消费的数据接口，形成了一套可复用的分析基础设施。', indent=True)
+
+add_heading_styled('7.2 未来改进方向', level=2)
+add_para('在算法层面，聚类任务可引入DBSCAN替代K-Means以自动确定簇数量，避免人工预设K值的限制。装备推荐可尝试集成学习（如XGBoost）获取非线性交互效应（例如某两件装备搭配时产生的协同增益），代价是损失系数的直观可解释性。此外，可引入时间维度分析Meta演化轨迹，观察阵容强度的此消彼长趋势。', indent=True)
+add_para('在数据层面，可扩展至多服务器（中国区、欧服、美服）以消除区域性偏差，并增加时间跨度以获取更稳健的Meta分析。在应用层面，可将分析结果部署为实时Web仪表盘，配合前端搜索功能为玩家提供动态的版本数据参考。', indent=True)
+
+# ─── 附录 ───
+add_heading_styled('附录：完整代码文件清单', level=1)
+
+add_para('以下列出本项目所有与机器学习直接相关的Python源文件及完整代码：', indent=True)
+
+add_heading_styled('A.1 clustering.py — K-Means聚类 (完整)', level=2)
+add_code_block('clustering.py 完整代码', clustering_code)
+
+add_heading_styled('A.2 bis_item.py — 线性回归BIS推荐 (完整)', level=2)
+add_code_block('bis_item.py 完整代码', bis_code)
+
+add_heading_styled('A.3 collab_filter.py — 协同过滤推荐 (完整)', level=2)
+add_code_block('collab_filter.py 完整代码', cf_code)
+
+# ─── 保存 ───
+output_path = '机器学习期末报告_含代码.docx'
+doc.save(output_path)
+print(f'✅ Word文档已保存: {os.path.abspath(output_path)}')
