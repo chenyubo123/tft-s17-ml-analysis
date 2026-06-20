@@ -1,0 +1,2000 @@
+{
+  "champItems": {
+    "亚托克斯": [
+      {
+        "rank": 1,
+        "itemCn": "石像鬼石板甲",
+        "top4": "50.0%",
+        "games": 38,
+        "avgPlace": 4.76,
+        "score": 1.85,
+        "color": "#3498db"
+      },
+      {
+        "rank": 2,
+        "itemCn": "泰坦的坚决",
+        "top4": "50.0%",
+        "games": 24,
+        "avgPlace": 4.67,
+        "score": 1.59,
+        "color": "#3498db"
+      },
+      {
+        "rank": 3,
+        "itemCn": "狂徒铠甲",
+        "top4": "66.7%",
+        "games": 12,
+        "avgPlace": 4.25,
+        "score": 1.59,
+        "color": "#3498db"
+      }
+    ],
+    "阿卡丽": [
+      {
+        "rank": 1,
+        "itemCn": "斯特拉克的挑战护手",
+        "top4": "56.5%",
+        "games": 46,
+        "avgPlace": 4.2,
+        "score": 2.09,
+        "color": "#3498db"
+      },
+      {
+        "rank": 2,
+        "itemCn": "死亡之刃",
+        "top4": "54.8%",
+        "games": 31,
+        "avgPlace": 4.16,
+        "score": 1.89,
+        "color": "#e74c3c"
+      },
+      {
+        "rank": 3,
+        "itemCn": "饮血剑",
+        "top4": "63.2%",
+        "games": 19,
+        "avgPlace": 4.32,
+        "score": 1.76,
+        "color": "#8e44ad"
+      }
+    ],
+    "奥瑞利安·索尔": [
+      {
+        "rank": 1,
+        "itemCn": "珠光护手",
+        "top4": "46.6%",
+        "games": 232,
+        "avgPlace": 4.65,
+        "score": 2.48,
+        "color": "#e74c3c"
+      },
+      {
+        "rank": 2,
+        "itemCn": "灭世者的死亡之帽",
+        "top4": "51.2%",
+        "games": 123,
+        "avgPlace": 4.5,
+        "score": 2.45,
+        "color": "#e74c3c"
+      },
+      {
+        "rank": 3,
+        "itemCn": "大天使之杖",
+        "top4": "44.4%",
+        "games": 27,
+        "avgPlace": 4.59,
+        "score": 1.54,
+        "color": "#e74c3c"
+      }
+    ],
+    "奥罗拉": [
+      {
+        "rank": 1,
+        "itemCn": "朔极之矛",
+        "top4": "54.5%",
+        "games": 22,
+        "avgPlace": 4.14,
+        "score": 1.67,
+        "color": "#e74c3c"
+      },
+      {
+        "rank": 2,
+        "itemCn": "莫雷洛秘典",
+        "top4": "47.4%",
+        "games": 19,
+        "avgPlace": 5.0,
+        "score": 1.42,
+        "color": "#e74c3c"
+      },
+      {
+        "rank": 3,
+        "itemCn": "珠光护手",
+        "top4": "37.5%",
+        "games": 24,
+        "avgPlace": 5.04,
+        "score": 1.28,
+        "color": "#e74c3c"
+      }
+    ],
+    "巴德": [
+      {
+        "rank": 1,
+        "itemCn": "珠光护手",
+        "top4": "65.0%",
+        "games": 280,
+        "avgPlace": 3.76,
+        "score": 3.46,
+        "color": "#e74c3c"
+      },
+      {
+        "rank": 2,
+        "itemCn": "灭世者的死亡之帽",
+        "top4": "65.9%",
+        "games": 170,
+        "avgPlace": 3.61,
+        "score": 3.27,
+        "color": "#e74c3c"
+      },
+      {
+        "rank": 3,
+        "itemCn": "适应性头盔",
+        "top4": "74.5%",
+        "games": 55,
+        "avgPlace": 2.98,
+        "score": 2.86,
+        "color": "#e74c3c"
+      }
+    ],
+    "卑尔维斯": [
+      {
+        "rank": 1,
+        "itemCn": "水银",
+        "top4": "59.0%",
+        "games": 83,
+        "avgPlace": 4.16,
+        "score": 2.5,
+        "color": "#8e44ad"
+      },
+      {
+        "rank": 2,
+        "itemCn": "死亡之刃",
+        "top4": "60.0%",
+        "games": 30,
+        "avgPlace": 3.97,
+        "score": 1.99,
+        "color": "#e74c3c"
+      },
+      {
+        "rank": 3,
+        "itemCn": "窃贼手套",
+        "top4": "48.4%",
+        "games": 31,
+        "avgPlace": 4.81,
+        "score": 1.7,
+        "color": "#8e44ad"
+      }
+    ],
+    "布里茨": [
+      {
+        "rank": 1,
+        "itemCn": "朔极之矛",
+        "top4": "74.9%",
+        "games": 171,
+        "avgPlace": 3.34,
+        "score": 3.57,
+        "color": "#e74c3c"
+      },
+      {
+        "rank": 2,
+        "itemCn": "窃贼手套",
+        "top4": "64.6%",
+        "games": 297,
+        "avgPlace": 3.79,
+        "score": 3.44,
+        "color": "#8e44ad"
+      },
+      {
+        "rank": 3,
+        "itemCn": "莫雷洛秘典",
+        "top4": "71.8%",
+        "games": 163,
+        "avgPlace": 3.51,
+        "score": 3.36,
+        "color": "#e74c3c"
+      }
+    ],
+    "贝蕾亚": [
+      {
+        "rank": 1,
+        "itemCn": "饮血剑",
+        "top4": "57.1%",
+        "games": 14,
+        "avgPlace": 4.57,
+        "score": 1.49,
+        "color": "#8e44ad"
+      },
+      {
+        "rank": 2,
+        "itemCn": "斯特拉克的挑战护手",
+        "top4": "63.6%",
+        "games": 11,
+        "avgPlace": 4.18,
+        "score": 1.48,
+        "color": "#3498db"
+      },
+      {
+        "rank": 3,
+        "itemCn": "窃贼手套",
+        "top4": "43.8%",
+        "games": 16,
+        "avgPlace": 5.06,
+        "score": 1.29,
+        "color": "#8e44ad"
+      }
+    ],
+    "凯特琳": [
+      {
+        "rank": 1,
+        "itemCn": "鬼索的狂暴之刃",
+        "top4": "56.1%",
+        "games": 41,
+        "avgPlace": 4.24,
+        "score": 2.05,
+        "color": "#e74c3c"
+      },
+      {
+        "rank": 2,
+        "itemCn": "无尽之刃",
+        "top4": "71.4%",
+        "games": 14,
+        "avgPlace": 3.71,
+        "score": 1.82,
+        "color": "#e74c3c"
+      },
+      {
+        "rank": 3,
+        "itemCn": "死亡之刃",
+        "top4": "56.5%",
+        "games": 23,
+        "avgPlace": 4.39,
+        "score": 1.8,
+        "color": "#e74c3c"
+      }
+    ],
+    "科加斯": [
+      {
+        "rank": 1,
+        "itemCn": "狂徒铠甲",
+        "top4": "53.5%",
+        "games": 142,
+        "avgPlace": 4.24,
+        "score": 2.59,
+        "color": "#3498db"
+      },
+      {
+        "rank": 2,
+        "itemCn": "冕卫",
+        "top4": "69.4%",
+        "games": 36,
+        "avgPlace": 3.53,
+        "score": 2.35,
+        "color": "#3498db"
+      },
+      {
+        "rank": 3,
+        "itemCn": "适应性头盔",
+        "top4": "55.6%",
+        "games": 45,
+        "avgPlace": 4.51,
+        "score": 2.13,
+        "color": "#e74c3c"
+      }
+    ],
+    "库奇": [
+      {
+        "rank": 1,
+        "itemCn": "死亡之刃",
+        "top4": "48.6%",
+        "games": 292,
+        "avgPlace": 4.63,
+        "score": 2.79,
+        "color": "#e74c3c"
+      },
+      {
+        "rank": 2,
+        "itemCn": "最后的轻语",
+        "top4": "46.2%",
+        "games": 286,
+        "avgPlace": 4.66,
+        "score": 2.68,
+        "color": "#e74c3c"
+      },
+      {
+        "rank": 3,
+        "itemCn": "朔极之矛",
+        "top4": "62.5%",
+        "games": 24,
+        "avgPlace": 4.25,
+        "score": 1.93,
+        "color": "#e74c3c"
+      }
+    ],
+    "黛安娜": [
+      {
+        "rank": 1,
+        "itemCn": "泰坦的坚决",
+        "top4": "42.5%",
+        "games": 40,
+        "avgPlace": 4.88,
+        "score": 1.66,
+        "color": "#3498db"
+      },
+      {
+        "rank": 2,
+        "itemCn": "饮血剑",
+        "top4": "40.9%",
+        "games": 44,
+        "avgPlace": 5.11,
+        "score": 1.66,
+        "color": "#8e44ad"
+      },
+      {
+        "rank": 3,
+        "itemCn": "鬼索的狂暴之刃",
+        "top4": "35.1%",
+        "games": 37,
+        "avgPlace": 5.35,
+        "score": 1.4,
+        "color": "#e74c3c"
+      }
+    ],
+    "伊泽瑞尔": [
+      {
+        "rank": 1,
+        "itemCn": "无尽之刃",
+        "top4": "53.8%",
+        "games": 52,
+        "avgPlace": 4.17,
+        "score": 2.07,
+        "color": "#e74c3c"
+      },
+      {
+        "rank": 2,
+        "itemCn": "朔极之矛",
+        "top4": "48.9%",
+        "games": 45,
+        "avgPlace": 4.2,
+        "score": 1.9,
+        "color": "#e74c3c"
+      },
+      {
+        "rank": 3,
+        "itemCn": "死亡之刃",
+        "top4": "46.7%",
+        "games": 15,
+        "avgPlace": 4.07,
+        "score": 1.3,
+        "color": "#e74c3c"
+      }
+    ],
+    "菲奥娜": [
+      {
+        "rank": 1,
+        "itemCn": "斯特拉克的挑战护手",
+        "top4": "62.3%",
+        "games": 151,
+        "avgPlace": 3.75,
+        "score": 2.97,
+        "color": "#3498db"
+      },
+      {
+        "rank": 2,
+        "itemCn": "饮血剑",
+        "top4": "65.5%",
+        "games": 87,
+        "avgPlace": 3.7,
+        "score": 2.74,
+        "color": "#8e44ad"
+      },
+      {
+        "rank": 3,
+        "itemCn": "泰坦的坚决",
+        "top4": "67.3%",
+        "games": 49,
+        "avgPlace": 3.51,
+        "score": 2.48,
+        "color": "#3498db"
+      }
+    ],
+    "菲兹": [
+      {
+        "rank": 1,
+        "itemCn": "窃贼手套",
+        "top4": "51.3%",
+        "games": 39,
+        "avgPlace": 4.79,
+        "score": 1.88,
+        "color": "#8e44ad"
+      },
+      {
+        "rank": 2,
+        "itemCn": "珠光护手",
+        "top4": "40.0%",
+        "games": 10,
+        "avgPlace": 5.2,
+        "score": 0.99,
+        "color": "#e74c3c"
+      }
+    ],
+    "加里奥": [
+      {
+        "rank": 1,
+        "itemCn": "石像鬼石板甲",
+        "top4": "52.6%",
+        "games": 194,
+        "avgPlace": 4.43,
+        "score": 2.76,
+        "color": "#3498db"
+      },
+      {
+        "rank": 2,
+        "itemCn": "斯特拉克的挑战护手",
+        "top4": "65.2%",
+        "games": 66,
+        "avgPlace": 3.77,
+        "score": 2.55,
+        "color": "#3498db"
+      },
+      {
+        "rank": 3,
+        "itemCn": "狂徒铠甲",
+        "top4": "52.1%",
+        "games": 96,
+        "avgPlace": 4.39,
+        "score": 2.35,
+        "color": "#3498db"
+      }
+    ],
+    "纳尔": [
+      {
+        "rank": 1,
+        "itemCn": "无尽之刃",
+        "top4": "61.3%",
+        "games": 124,
+        "avgPlace": 3.91,
+        "score": 2.88,
+        "color": "#e74c3c"
+      },
+      {
+        "rank": 2,
+        "itemCn": "鬼索的狂暴之刃",
+        "top4": "57.1%",
+        "games": 168,
+        "avgPlace": 4.14,
+        "score": 2.83,
+        "color": "#e74c3c"
+      },
+      {
+        "rank": 3,
+        "itemCn": "死亡之刃",
+        "top4": "56.6%",
+        "games": 99,
+        "avgPlace": 4.21,
+        "score": 2.58,
+        "color": "#e74c3c"
+      }
+    ],
+    "古拉加斯": [
+      {
+        "rank": 1,
+        "itemCn": "珠光护手",
+        "top4": "70.0%",
+        "games": 30,
+        "avgPlace": 3.27,
+        "score": 2.22,
+        "color": "#e74c3c"
+      },
+      {
+        "rank": 2,
+        "itemCn": "狂徒铠甲",
+        "top4": "57.1%",
+        "games": 14,
+        "avgPlace": 4.14,
+        "score": 1.49,
+        "color": "#3498db"
+      },
+      {
+        "rank": 3,
+        "itemCn": "冕卫",
+        "top4": "50.0%",
+        "games": 18,
+        "avgPlace": 4.61,
+        "score": 1.47,
+        "color": "#3498db"
+      }
+    ],
+    "格雷福斯": [
+      {
+        "rank": 1,
+        "itemCn": "水银",
+        "top4": "58.9%",
+        "games": 151,
+        "avgPlace": 3.79,
+        "score": 2.85,
+        "color": "#8e44ad"
+      },
+      {
+        "rank": 2,
+        "itemCn": "死亡之刃",
+        "top4": "60.4%",
+        "games": 96,
+        "avgPlace": 3.91,
+        "score": 2.71,
+        "color": "#e74c3c"
+      },
+      {
+        "rank": 3,
+        "itemCn": "斯特拉克的挑战护手",
+        "top4": "53.4%",
+        "games": 88,
+        "avgPlace": 4.26,
+        "score": 2.33,
+        "color": "#3498db"
+      }
+    ],
+    "格温": [
+      {
+        "rank": 1,
+        "itemCn": "窃贼手套",
+        "top4": "64.7%",
+        "games": 34,
+        "avgPlace": 3.76,
+        "score": 2.16,
+        "color": "#8e44ad"
+      },
+      {
+        "rank": 2,
+        "itemCn": "珠光护手",
+        "top4": "51.9%",
+        "games": 27,
+        "avgPlace": 4.78,
+        "score": 1.7,
+        "color": "#e74c3c"
+      },
+      {
+        "rank": 3,
+        "itemCn": "海克斯科技枪刃",
+        "top4": "63.6%",
+        "games": 11,
+        "avgPlace": 3.91,
+        "score": 1.5,
+        "color": "#e74c3c"
+      }
+    ],
+    "俄洛伊": [
+      {
+        "rank": 1,
+        "itemCn": "石像鬼石板甲",
+        "top4": "42.1%",
+        "games": 197,
+        "avgPlace": 4.75,
+        "score": 2.35,
+        "color": "#3498db"
+      },
+      {
+        "rank": 2,
+        "itemCn": "狂徒铠甲",
+        "top4": "40.2%",
+        "games": 179,
+        "avgPlace": 4.85,
+        "score": 2.24,
+        "color": "#3498db"
+      },
+      {
+        "rank": 3,
+        "itemCn": "棘刺背心",
+        "top4": "58.8%",
+        "games": 51,
+        "avgPlace": 4.16,
+        "score": 2.22,
+        "color": "#3498db"
+      }
+    ],
+    "IvernMinion": [
+      {
+        "rank": 1,
+        "itemCn": "珠光护手",
+        "top4": "66.7%",
+        "games": 12,
+        "avgPlace": 4.17,
+        "score": 1.6,
+        "color": "#e74c3c"
+      },
+      {
+        "rank": 2,
+        "itemCn": "狂徒铠甲",
+        "top4": "50.0%",
+        "games": 18,
+        "avgPlace": 4.67,
+        "score": 1.49,
+        "color": "#3498db"
+      },
+      {
+        "rank": 3,
+        "itemCn": "石像鬼石板甲",
+        "top4": "47.6%",
+        "games": 21,
+        "avgPlace": 4.52,
+        "score": 1.48,
+        "color": "#3498db"
+      }
+    ],
+    "贾克斯": [
+      {
+        "rank": 1,
+        "itemCn": "石像鬼石板甲",
+        "top4": "57.9%",
+        "games": 133,
+        "avgPlace": 4.15,
+        "score": 2.74,
+        "color": "#3498db"
+      },
+      {
+        "rank": 2,
+        "itemCn": "狂徒铠甲",
+        "top4": "51.5%",
+        "games": 66,
+        "avgPlace": 4.2,
+        "score": 2.15,
+        "color": "#3498db"
+      },
+      {
+        "rank": 3,
+        "itemCn": "冕卫",
+        "top4": "47.1%",
+        "games": 51,
+        "avgPlace": 4.84,
+        "score": 1.9,
+        "color": "#3498db"
+      }
+    ],
+    "烬": [
+      {
+        "rank": 1,
+        "itemCn": "无尽之刃",
+        "top4": "69.5%",
+        "games": 249,
+        "avgPlace": 3.52,
+        "score": 3.73,
+        "color": "#e74c3c"
+      },
+      {
+        "rank": 2,
+        "itemCn": "死亡之刃",
+        "top4": "69.4%",
+        "games": 170,
+        "avgPlace": 3.44,
+        "score": 3.42,
+        "color": "#e74c3c"
+      },
+      {
+        "rank": 3,
+        "itemCn": "最后的轻语",
+        "top4": "72.3%",
+        "games": 155,
+        "avgPlace": 3.29,
+        "score": 3.38,
+        "color": "#e74c3c"
+      }
+    ],
+    "金克丝": [
+      {
+        "rank": 1,
+        "itemCn": "最后的轻语",
+        "top4": "62.0%",
+        "games": 50,
+        "avgPlace": 3.94,
+        "score": 2.32,
+        "color": "#e74c3c"
+      },
+      {
+        "rank": 2,
+        "itemCn": "死亡之刃",
+        "top4": "48.9%",
+        "games": 90,
+        "avgPlace": 4.63,
+        "score": 2.25,
+        "color": "#e74c3c"
+      },
+      {
+        "rank": 3,
+        "itemCn": "无尽之刃",
+        "top4": "47.1%",
+        "games": 34,
+        "avgPlace": 4.53,
+        "score": 1.72,
+        "color": "#e74c3c"
+      }
+    ],
+    "卡莎": [
+      {
+        "rank": 1,
+        "itemCn": "朔极之矛",
+        "top4": "54.5%",
+        "games": 22,
+        "avgPlace": 4.59,
+        "score": 1.7,
+        "color": "#e74c3c"
+      },
+      {
+        "rank": 2,
+        "itemCn": "无尽之刃",
+        "top4": "36.8%",
+        "games": 57,
+        "avgPlace": 5.07,
+        "score": 1.65,
+        "color": "#e74c3c"
+      },
+      {
+        "rank": 3,
+        "itemCn": "死亡之刃",
+        "top4": "52.4%",
+        "games": 21,
+        "avgPlace": 4.71,
+        "score": 1.59,
+        "color": "#e74c3c"
+      }
+    ],
+    "卡尔玛": [
+      {
+        "rank": 1,
+        "itemCn": "莫雷洛秘典",
+        "top4": "51.0%",
+        "games": 153,
+        "avgPlace": 4.5,
+        "score": 2.55,
+        "color": "#e74c3c"
+      },
+      {
+        "rank": 2,
+        "itemCn": "朔极之矛",
+        "top4": "50.0%",
+        "games": 128,
+        "avgPlace": 4.54,
+        "score": 2.44,
+        "color": "#e74c3c"
+      },
+      {
+        "rank": 3,
+        "itemCn": "蓝霸符",
+        "top4": "60.3%",
+        "games": 58,
+        "avgPlace": 4.1,
+        "score": 2.33,
+        "color": "#e74c3c"
+      }
+    ],
+    "千珏": [
+      {
+        "rank": 1,
+        "itemCn": "鬼索的狂暴之刃",
+        "top4": "53.8%",
+        "games": 182,
+        "avgPlace": 4.58,
+        "score": 2.8,
+        "color": "#e74c3c"
+      },
+      {
+        "rank": 2,
+        "itemCn": "最后的轻语",
+        "top4": "52.9%",
+        "games": 153,
+        "avgPlace": 4.54,
+        "score": 2.64,
+        "color": "#e74c3c"
+      },
+      {
+        "rank": 3,
+        "itemCn": "死亡之刃",
+        "top4": "60.9%",
+        "games": 64,
+        "avgPlace": 4.17,
+        "score": 2.51,
+        "color": "#e74c3c"
+      }
+    ],
+    "乐芙兰": [
+      {
+        "rank": 1,
+        "itemCn": "鬼索的狂暴之刃",
+        "top4": "42.3%",
+        "games": 137,
+        "avgPlace": 4.79,
+        "score": 2.19,
+        "color": "#e74c3c"
+      },
+      {
+        "rank": 2,
+        "itemCn": "灭世者的死亡之帽",
+        "top4": "60.7%",
+        "games": 28,
+        "avgPlace": 4.32,
+        "score": 1.95,
+        "color": "#e74c3c"
+      },
+      {
+        "rank": 3,
+        "itemCn": "珠光护手",
+        "top4": "44.6%",
+        "games": 65,
+        "avgPlace": 4.43,
+        "score": 1.87,
+        "color": "#e74c3c"
+      }
+    ],
+    "蕾欧娜": [
+      {
+        "rank": 1,
+        "itemCn": "石像鬼石板甲",
+        "top4": "53.5%",
+        "games": 172,
+        "avgPlace": 4.38,
+        "score": 2.7,
+        "color": "#3498db"
+      },
+      {
+        "rank": 2,
+        "itemCn": "狂徒铠甲",
+        "top4": "55.0%",
+        "games": 100,
+        "avgPlace": 4.22,
+        "score": 2.47,
+        "color": "#3498db"
+      },
+      {
+        "rank": 3,
+        "itemCn": "斯特拉克的挑战护手",
+        "top4": "62.1%",
+        "games": 29,
+        "avgPlace": 3.79,
+        "score": 2.02,
+        "color": "#3498db"
+      }
+    ],
+    "丽桑卓": [
+      {
+        "rank": 1,
+        "itemCn": "珠光护手",
+        "top4": "54.3%",
+        "games": 127,
+        "avgPlace": 4.37,
+        "score": 2.56,
+        "color": "#e74c3c"
+      },
+      {
+        "rank": 2,
+        "itemCn": "朔极之矛",
+        "top4": "49.2%",
+        "games": 59,
+        "avgPlace": 4.49,
+        "score": 2.04,
+        "color": "#e74c3c"
+      },
+      {
+        "rank": 3,
+        "itemCn": "适应性头盔",
+        "top4": "83.3%",
+        "games": 12,
+        "avgPlace": 3.0,
+        "score": 2.0,
+        "color": "#e74c3c"
+      }
+    ],
+    "璐璐": [
+      {
+        "rank": 1,
+        "itemCn": "珠光护手",
+        "top4": "50.4%",
+        "games": 131,
+        "avgPlace": 4.58,
+        "score": 2.42,
+        "color": "#e74c3c"
+      },
+      {
+        "rank": 2,
+        "itemCn": "朔极之矛",
+        "top4": "50.7%",
+        "games": 73,
+        "avgPlace": 4.47,
+        "score": 2.23,
+        "color": "#e74c3c"
+      },
+      {
+        "rank": 3,
+        "itemCn": "灭世者的死亡之帽",
+        "top4": "78.6%",
+        "games": 14,
+        "avgPlace": 3.36,
+        "score": 1.93,
+        "color": "#e74c3c"
+      }
+    ],
+    "茂凯": [
+      {
+        "rank": 1,
+        "itemCn": "狂徒铠甲",
+        "top4": "55.8%",
+        "games": 163,
+        "avgPlace": 4.18,
+        "score": 2.77,
+        "color": "#3498db"
+      },
+      {
+        "rank": 2,
+        "itemCn": "冕卫",
+        "top4": "57.5%",
+        "games": 87,
+        "avgPlace": 4.06,
+        "score": 2.5,
+        "color": "#3498db"
+      },
+      {
+        "rank": 3,
+        "itemCn": "红霸符",
+        "top4": "56.7%",
+        "games": 97,
+        "avgPlace": 4.36,
+        "score": 2.5,
+        "color": "#e74c3c"
+      }
+    ],
+    "易大师": [
+      {
+        "rank": 1,
+        "itemCn": "水银",
+        "top4": "50.4%",
+        "games": 135,
+        "avgPlace": 4.6,
+        "score": 2.47,
+        "color": "#8e44ad"
+      },
+      {
+        "rank": 2,
+        "itemCn": "死亡之刃",
+        "top4": "56.7%",
+        "games": 30,
+        "avgPlace": 4.43,
+        "score": 1.91,
+        "color": "#e74c3c"
+      },
+      {
+        "rank": 3,
+        "itemCn": "饮血剑",
+        "top4": "57.9%",
+        "games": 19,
+        "avgPlace": 4.47,
+        "score": 1.66,
+        "color": "#8e44ad"
+      }
+    ],
+    "米利欧": [
+      {
+        "rank": 1,
+        "itemCn": "朔极之矛",
+        "top4": "67.9%",
+        "games": 81,
+        "avgPlace": 3.7,
+        "score": 2.87,
+        "color": "#e74c3c"
+      },
+      {
+        "rank": 2,
+        "itemCn": "莫雷洛秘典",
+        "top4": "52.0%",
+        "games": 179,
+        "avgPlace": 4.54,
+        "score": 2.71,
+        "color": "#e74c3c"
+      },
+      {
+        "rank": 3,
+        "itemCn": "灭世者的死亡之帽",
+        "top4": "68.8%",
+        "games": 48,
+        "avgPlace": 3.83,
+        "score": 2.54,
+        "color": "#e74c3c"
+      }
+    ],
+    "厄运小姐": [
+      {
+        "rank": 1,
+        "itemCn": "无尽之刃",
+        "top4": "39.7%",
+        "games": 78,
+        "avgPlace": 4.86,
+        "score": 1.87,
+        "color": "#e74c3c"
+      },
+      {
+        "rank": 2,
+        "itemCn": "鬼索的狂暴之刃",
+        "top4": "40.0%",
+        "games": 60,
+        "avgPlace": 4.85,
+        "score": 1.7,
+        "color": "#e74c3c"
+      },
+      {
+        "rank": 3,
+        "itemCn": "死亡之刃",
+        "top4": "37.9%",
+        "games": 58,
+        "avgPlace": 5.05,
+        "score": 1.68,
+        "color": "#e74c3c"
+      }
+    ],
+    "莫德凯撒": [
+      {
+        "rank": 1,
+        "itemCn": "狂徒铠甲",
+        "top4": "54.3%",
+        "games": 35,
+        "avgPlace": 4.34,
+        "score": 1.9,
+        "color": "#3498db"
+      },
+      {
+        "rank": 2,
+        "itemCn": "石像鬼石板甲",
+        "top4": "51.7%",
+        "games": 29,
+        "avgPlace": 4.28,
+        "score": 1.76,
+        "color": "#3498db"
+      },
+      {
+        "rank": 3,
+        "itemCn": "红霸符",
+        "top4": "52.4%",
+        "games": 21,
+        "avgPlace": 4.52,
+        "score": 1.61,
+        "color": "#e74c3c"
+      }
+    ],
+    "莫甘娜": [
+      {
+        "rank": 1,
+        "itemCn": "石像鬼石板甲",
+        "top4": "58.6%",
+        "games": 70,
+        "avgPlace": 4.03,
+        "score": 2.37,
+        "color": "#3498db"
+      },
+      {
+        "rank": 2,
+        "itemCn": "适应性头盔",
+        "top4": "58.5%",
+        "games": 53,
+        "avgPlace": 4.15,
+        "score": 2.3,
+        "color": "#e74c3c"
+      },
+      {
+        "rank": 3,
+        "itemCn": "冕卫",
+        "top4": "53.1%",
+        "games": 49,
+        "avgPlace": 4.22,
+        "score": 2.12,
+        "color": "#3498db"
+      }
+    ],
+    "娜美": [
+      {
+        "rank": 1,
+        "itemCn": "珠光护手",
+        "top4": "55.5%",
+        "games": 263,
+        "avgPlace": 4.19,
+        "score": 3.04,
+        "color": "#e74c3c"
+      },
+      {
+        "rank": 2,
+        "itemCn": "朔极之矛",
+        "top4": "54.5%",
+        "games": 145,
+        "avgPlace": 4.27,
+        "score": 2.71,
+        "color": "#e74c3c"
+      },
+      {
+        "rank": 3,
+        "itemCn": "莫雷洛秘典",
+        "top4": "57.6%",
+        "games": 99,
+        "avgPlace": 4.08,
+        "score": 2.58,
+        "color": "#e74c3c"
+      }
+    ],
+    "内瑟斯": [
+      {
+        "rank": 1,
+        "itemCn": "红霸符",
+        "top4": "58.3%",
+        "games": 12,
+        "avgPlace": 4.25,
+        "score": 1.46,
+        "color": "#e74c3c"
+      },
+      {
+        "rank": 2,
+        "itemCn": "石像鬼石板甲",
+        "top4": "60.0%",
+        "games": 10,
+        "avgPlace": 4.4,
+        "score": 1.37,
+        "color": "#3498db"
+      },
+      {
+        "rank": 3,
+        "itemCn": "窃贼手套",
+        "top4": "46.2%",
+        "games": 13,
+        "avgPlace": 4.62,
+        "score": 1.29,
+        "color": "#8e44ad"
+      }
+    ],
+    "努努": [
+      {
+        "rank": 1,
+        "itemCn": "适应性头盔",
+        "top4": "60.7%",
+        "games": 300,
+        "avgPlace": 3.96,
+        "score": 3.27,
+        "color": "#e74c3c"
+      },
+      {
+        "rank": 2,
+        "itemCn": "狂徒铠甲",
+        "top4": "58.9%",
+        "games": 275,
+        "avgPlace": 4.02,
+        "score": 3.15,
+        "color": "#3498db"
+      },
+      {
+        "rank": 3,
+        "itemCn": "石像鬼石板甲",
+        "top4": "57.5%",
+        "games": 275,
+        "avgPlace": 4.1,
+        "score": 3.11,
+        "color": "#3498db"
+      }
+    ],
+    "奥恩": [
+      {
+        "rank": 1,
+        "itemCn": "狂徒铠甲",
+        "top4": "64.1%",
+        "games": 304,
+        "avgPlace": 3.87,
+        "score": 3.46,
+        "color": "#3498db"
+      },
+      {
+        "rank": 2,
+        "itemCn": "石像鬼石板甲",
+        "top4": "57.3%",
+        "games": 361,
+        "avgPlace": 4.2,
+        "score": 3.32,
+        "color": "#3498db"
+      },
+      {
+        "rank": 3,
+        "itemCn": "棘刺背心",
+        "top4": "67.5%",
+        "games": 40,
+        "avgPlace": 3.77,
+        "score": 2.46,
+        "color": "#3498db"
+      }
+    ],
+    "潘森": [
+      {
+        "rank": 1,
+        "itemCn": "石像鬼石板甲",
+        "top4": "56.8%",
+        "games": 74,
+        "avgPlace": 4.34,
+        "score": 2.35,
+        "color": "#3498db"
+      },
+      {
+        "rank": 2,
+        "itemCn": "狂徒铠甲",
+        "top4": "50.0%",
+        "games": 48,
+        "avgPlace": 4.67,
+        "score": 1.98,
+        "color": "#3498db"
+      },
+      {
+        "rank": 3,
+        "itemCn": "冕卫",
+        "top4": "54.1%",
+        "games": 37,
+        "avgPlace": 4.46,
+        "score": 1.95,
+        "color": "#3498db"
+      }
+    ],
+    "波比": [
+      {
+        "rank": 1,
+        "itemCn": "冕卫",
+        "top4": "85.7%",
+        "games": 14,
+        "avgPlace": 2.64,
+        "score": 2.12,
+        "color": "#3498db"
+      },
+      {
+        "rank": 2,
+        "itemCn": "红霸符",
+        "top4": "63.2%",
+        "games": 19,
+        "avgPlace": 3.68,
+        "score": 1.84,
+        "color": "#e74c3c"
+      },
+      {
+        "rank": 3,
+        "itemCn": "适应性头盔",
+        "top4": "61.5%",
+        "games": 13,
+        "avgPlace": 3.62,
+        "score": 1.61,
+        "color": "#e74c3c"
+      }
+    ],
+    "派克": [
+      {
+        "rank": 1,
+        "itemCn": "无尽之刃",
+        "top4": "58.5%",
+        "games": 41,
+        "avgPlace": 4.46,
+        "score": 2.16,
+        "color": "#e74c3c"
+      },
+      {
+        "rank": 2,
+        "itemCn": "死亡之刃",
+        "top4": "66.7%",
+        "games": 15,
+        "avgPlace": 4.27,
+        "score": 1.76,
+        "color": "#e74c3c"
+      }
+    ],
+    "拉莫斯": [
+      {
+        "rank": 1,
+        "itemCn": "冕卫",
+        "top4": "57.4%",
+        "games": 216,
+        "avgPlace": 4.12,
+        "score": 3.03,
+        "color": "#3498db"
+      },
+      {
+        "rank": 2,
+        "itemCn": "石像鬼石板甲",
+        "top4": "51.0%",
+        "games": 359,
+        "avgPlace": 4.36,
+        "score": 3.01,
+        "color": "#3498db"
+      },
+      {
+        "rank": 3,
+        "itemCn": "棘刺背心",
+        "top4": "66.1%",
+        "games": 62,
+        "avgPlace": 3.84,
+        "score": 2.67,
+        "color": "#3498db"
+      }
+    ],
+    "雷克塞": [
+      {
+        "rank": 1,
+        "itemCn": "红霸符",
+        "top4": "72.7%",
+        "games": 33,
+        "avgPlace": 3.76,
+        "score": 2.35,
+        "color": "#e74c3c"
+      },
+      {
+        "rank": 2,
+        "itemCn": "石像鬼石板甲",
+        "top4": "59.1%",
+        "games": 44,
+        "avgPlace": 4.07,
+        "score": 2.15,
+        "color": "#3498db"
+      },
+      {
+        "rank": 3,
+        "itemCn": "冕卫",
+        "top4": "55.6%",
+        "games": 27,
+        "avgPlace": 4.11,
+        "score": 1.82,
+        "color": "#3498db"
+      }
+    ],
+    "拉亚斯特": [
+      {
+        "rank": 1,
+        "itemCn": "窃贼手套",
+        "top4": "53.7%",
+        "games": 67,
+        "avgPlace": 4.55,
+        "score": 2.23,
+        "color": "#8e44ad"
+      },
+      {
+        "rank": 2,
+        "itemCn": "狂徒铠甲",
+        "top4": "55.3%",
+        "games": 38,
+        "avgPlace": 4.45,
+        "score": 1.98,
+        "color": "#3498db"
+      },
+      {
+        "rank": 3,
+        "itemCn": "适应性头盔",
+        "top4": "61.5%",
+        "games": 26,
+        "avgPlace": 3.77,
+        "score": 1.92,
+        "color": "#e74c3c"
+      }
+    ],
+    "锐雯": [
+      {
+        "rank": 1,
+        "itemCn": "斯特拉克的挑战护手",
+        "top4": "56.9%",
+        "games": 174,
+        "avgPlace": 4.2,
+        "score": 2.84,
+        "color": "#3498db"
+      },
+      {
+        "rank": 2,
+        "itemCn": "饮血剑",
+        "top4": "53.9%",
+        "games": 180,
+        "avgPlace": 4.41,
+        "score": 2.69,
+        "color": "#8e44ad"
+      },
+      {
+        "rank": 3,
+        "itemCn": "泰坦的坚决",
+        "top4": "51.9%",
+        "games": 79,
+        "avgPlace": 4.39,
+        "score": 2.24,
+        "color": "#3498db"
+      }
+    ],
+    "莎弥拉": [
+      {
+        "rank": 1,
+        "itemCn": "朔极之矛",
+        "top4": "59.5%",
+        "games": 252,
+        "avgPlace": 4.04,
+        "score": 3.14,
+        "color": "#e74c3c"
+      },
+      {
+        "rank": 2,
+        "itemCn": "最后的轻语",
+        "top4": "59.8%",
+        "games": 199,
+        "avgPlace": 4.0,
+        "score": 3.04,
+        "color": "#e74c3c"
+      },
+      {
+        "rank": 3,
+        "itemCn": "死亡之刃",
+        "top4": "59.8%",
+        "games": 164,
+        "avgPlace": 4.07,
+        "score": 2.97,
+        "color": "#e74c3c"
+      }
+    ],
+    "慎": [
+      {
+        "rank": 1,
+        "itemCn": "窃贼手套",
+        "top4": "71.8%",
+        "games": 124,
+        "avgPlace": 3.27,
+        "score": 3.23,
+        "color": "#8e44ad"
+      },
+      {
+        "rank": 2,
+        "itemCn": "适应性头盔",
+        "top4": "77.8%",
+        "games": 45,
+        "avgPlace": 3.11,
+        "score": 2.88,
+        "color": "#e74c3c"
+      },
+      {
+        "rank": 3,
+        "itemCn": "红霸符",
+        "top4": "83.3%",
+        "games": 18,
+        "avgPlace": 3.33,
+        "score": 2.25,
+        "color": "#e74c3c"
+      }
+    ],
+    "娑娜": [
+      {
+        "rank": 1,
+        "itemCn": "朔极之矛",
+        "top4": "69.0%",
+        "games": 142,
+        "avgPlace": 3.6,
+        "score": 3.31,
+        "color": "#e74c3c"
+      },
+      {
+        "rank": 2,
+        "itemCn": "蓝霸符",
+        "top4": "70.1%",
+        "games": 77,
+        "avgPlace": 3.31,
+        "score": 2.94,
+        "color": "#e74c3c"
+      },
+      {
+        "rank": 3,
+        "itemCn": "珠光护手",
+        "top4": "60.0%",
+        "games": 145,
+        "avgPlace": 4.06,
+        "score": 2.88,
+        "color": "#e74c3c"
+      }
+    ],
+    "塔姆·肯奇": [
+      {
+        "rank": 1,
+        "itemCn": "狂徒铠甲",
+        "top4": "55.0%",
+        "games": 311,
+        "avgPlace": 4.15,
+        "score": 3.09,
+        "color": "#3498db"
+      },
+      {
+        "rank": 2,
+        "itemCn": "石像鬼石板甲",
+        "top4": "53.0%",
+        "games": 247,
+        "avgPlace": 4.31,
+        "score": 2.89,
+        "color": "#3498db"
+      },
+      {
+        "rank": 3,
+        "itemCn": "红霸符",
+        "top4": "52.8%",
+        "games": 159,
+        "avgPlace": 4.48,
+        "score": 2.68,
+        "color": "#e74c3c"
+      }
+    ],
+    "提莫": [
+      {
+        "rank": 1,
+        "itemCn": "鬼索的狂暴之刃",
+        "top4": "48.4%",
+        "games": 31,
+        "avgPlace": 4.65,
+        "score": 1.69,
+        "color": "#e74c3c"
+      },
+      {
+        "rank": 2,
+        "itemCn": "珠光护手",
+        "top4": "45.5%",
+        "games": 11,
+        "avgPlace": 4.91,
+        "score": 1.11,
+        "color": "#e74c3c"
+      }
+    ],
+    "崔斯特": [
+      {
+        "rank": 1,
+        "itemCn": "灭世者的死亡之帽",
+        "top4": "58.6%",
+        "games": 29,
+        "avgPlace": 4.1,
+        "score": 1.92,
+        "color": "#e74c3c"
+      },
+      {
+        "rank": 2,
+        "itemCn": "朔极之矛",
+        "top4": "70.0%",
+        "games": 10,
+        "avgPlace": 4.1,
+        "score": 1.56,
+        "color": "#e74c3c"
+      }
+    ],
+    "厄加特": [
+      {
+        "rank": 1,
+        "itemCn": "死亡之刃",
+        "top4": "66.7%",
+        "games": 36,
+        "avgPlace": 4.0,
+        "score": 2.26,
+        "color": "#e74c3c"
+      },
+      {
+        "rank": 2,
+        "itemCn": "窃贼手套",
+        "top4": "55.6%",
+        "games": 45,
+        "avgPlace": 4.27,
+        "score": 2.12,
+        "color": "#8e44ad"
+      },
+      {
+        "rank": 3,
+        "itemCn": "斯特拉克的挑战护手",
+        "top4": "54.8%",
+        "games": 31,
+        "avgPlace": 4.71,
+        "score": 1.86,
+        "color": "#3498db"
+      }
+    ],
+    "维迦": [
+      {
+        "rank": 1,
+        "itemCn": "珠光护手",
+        "top4": "45.7%",
+        "games": 70,
+        "avgPlace": 4.41,
+        "score": 1.95,
+        "color": "#e74c3c"
+      },
+      {
+        "rank": 2,
+        "itemCn": "朔极之矛",
+        "top4": "51.9%",
+        "games": 27,
+        "avgPlace": 3.89,
+        "score": 1.75,
+        "color": "#e74c3c"
+      },
+      {
+        "rank": 3,
+        "itemCn": "灭世者的死亡之帽",
+        "top4": "61.1%",
+        "games": 18,
+        "avgPlace": 3.78,
+        "score": 1.71,
+        "color": "#e74c3c"
+      }
+    ],
+    "薇古丝": [
+      {
+        "rank": 1,
+        "itemCn": "鬼索的狂暴之刃",
+        "top4": "55.3%",
+        "games": 414,
+        "avgPlace": 4.17,
+        "score": 3.23,
+        "color": "#e74c3c"
+      },
+      {
+        "rank": 2,
+        "itemCn": "灭世者的死亡之帽",
+        "top4": "61.8%",
+        "games": 76,
+        "avgPlace": 4.0,
+        "score": 2.56,
+        "color": "#e74c3c"
+      },
+      {
+        "rank": 3,
+        "itemCn": "珠光护手",
+        "top4": "51.9%",
+        "games": 77,
+        "avgPlace": 4.17,
+        "score": 2.2,
+        "color": "#e74c3c"
+      }
+    ],
+    "维克托": [
+      {
+        "rank": 1,
+        "itemCn": "珠光护手",
+        "top4": "34.4%",
+        "games": 32,
+        "avgPlace": 4.91,
+        "score": 1.3,
+        "color": "#e74c3c"
+      },
+      {
+        "rank": 2,
+        "itemCn": "大天使之杖",
+        "top4": "45.5%",
+        "games": 11,
+        "avgPlace": 5.0,
+        "score": 1.16,
+        "color": "#e74c3c"
+      },
+      {
+        "rank": 3,
+        "itemCn": "灭世者的死亡之帽",
+        "top4": "22.2%",
+        "games": 18,
+        "avgPlace": 5.33,
+        "score": 0.88,
+        "color": "#e74c3c"
+      }
+    ],
+    "霞": [
+      {
+        "rank": 1,
+        "itemCn": "鬼索的狂暴之刃",
+        "top4": "51.8%",
+        "games": 85,
+        "avgPlace": 4.47,
+        "score": 2.29,
+        "color": "#e74c3c"
+      },
+      {
+        "rank": 2,
+        "itemCn": "无尽之刃",
+        "top4": "54.8%",
+        "games": 31,
+        "avgPlace": 4.68,
+        "score": 1.9,
+        "color": "#e74c3c"
+      },
+      {
+        "rank": 3,
+        "itemCn": "死亡之刃",
+        "top4": "42.3%",
+        "games": 52,
+        "avgPlace": 4.75,
+        "score": 1.79,
+        "color": "#e74c3c"
+      }
+    ],
+    "劫": [
+      {
+        "rank": 1,
+        "itemCn": "适应性头盔",
+        "top4": "50.0%",
+        "games": 20,
+        "avgPlace": 4.3,
+        "score": 1.52,
+        "color": "#e74c3c"
+      },
+      {
+        "rank": 2,
+        "itemCn": "朔极之矛",
+        "top4": "34.4%",
+        "games": 32,
+        "avgPlace": 5.06,
+        "score": 1.34,
+        "color": "#e74c3c"
+      }
+    ],
+    "佐伊": [
+      {
+        "rank": 1,
+        "itemCn": "莫雷洛秘典",
+        "top4": "51.4%",
+        "games": 35,
+        "avgPlace": 4.31,
+        "score": 1.82,
+        "color": "#e74c3c"
+      },
+      {
+        "rank": 2,
+        "itemCn": "珠光护手",
+        "top4": "47.1%",
+        "games": 17,
+        "avgPlace": 4.59,
+        "score": 1.33,
+        "color": "#e74c3c"
+      }
+    ]
+  },
+  "champTotal": {
+    "IvernMinion": 51,
+    "丽桑卓": 198,
+    "乐芙兰": 230,
+    "亚托克斯": 74,
+    "伊泽瑞尔": 112,
+    "佐伊": 52,
+    "俄洛伊": 427,
+    "内瑟斯": 35,
+    "凯特琳": 78,
+    "加里奥": 356,
+    "努努": 850,
+    "劫": 52,
+    "千珏": 399,
+    "卑尔维斯": 144,
+    "卡尔玛": 339,
+    "卡莎": 100,
+    "厄加特": 112,
+    "厄运小姐": 196,
+    "古拉加斯": 62,
+    "塔姆·肯奇": 717,
+    "奥恩": 705,
+    "奥瑞利安·索尔": 382,
+    "奥罗拉": 65,
+    "娑娜": 364,
+    "娜美": 507,
+    "崔斯特": 39,
+    "巴德": 505,
+    "布里茨": 631,
+    "库奇": 602,
+    "慎": 187,
+    "拉亚斯特": 131,
+    "拉莫斯": 637,
+    "提莫": 42,
+    "易大师": 184,
+    "格温": 72,
+    "格雷福斯": 335,
+    "波比": 46,
+    "派克": 56,
+    "潘森": 159,
+    "烬": 574,
+    "璐璐": 218,
+    "科加斯": 223,
+    "米利欧": 308,
+    "纳尔": 391,
+    "维克托": 61,
+    "维迦": 115,
+    "茂凯": 347,
+    "莎弥拉": 615,
+    "莫德凯撒": 85,
+    "莫甘娜": 172,
+    "菲兹": 49,
+    "菲奥娜": 287,
+    "蕾欧娜": 301,
+    "薇古丝": 567,
+    "贝蕾亚": 41,
+    "贾克斯": 250,
+    "金克丝": 174,
+    "锐雯": 433,
+    "阿卡丽": 96,
+    "雷克塞": 104,
+    "霞": 168,
+    "黛安娜": 121
+  },
+  "searchIndex": {
+    "Aatrox": "亚托克斯",
+    "aatrox": "亚托克斯",
+    "亚托克斯": "亚托克斯",
+    "Akali": "阿卡丽",
+    "akali": "阿卡丽",
+    "阿卡丽": "阿卡丽",
+    "AurelionSol": "奥瑞利安·索尔",
+    "aurelionsol": "奥瑞利安·索尔",
+    "奥瑞利安·索尔": "奥瑞利安·索尔",
+    "Aurora": "奥罗拉",
+    "aurora": "奥罗拉",
+    "奥罗拉": "奥罗拉",
+    "Bard": "巴德",
+    "bard": "巴德",
+    "巴德": "巴德",
+    "Belveth": "卑尔维斯",
+    "belveth": "卑尔维斯",
+    "卑尔维斯": "卑尔维斯",
+    "Blitzcrank": "布里茨",
+    "blitzcrank": "布里茨",
+    "布里茨": "布里茨",
+    "Briar": "贝蕾亚",
+    "briar": "贝蕾亚",
+    "贝蕾亚": "贝蕾亚",
+    "Caitlyn": "凯特琳",
+    "caitlyn": "凯特琳",
+    "凯特琳": "凯特琳",
+    "Chogath": "科加斯",
+    "chogath": "科加斯",
+    "科加斯": "科加斯",
+    "Corki": "库奇",
+    "corki": "库奇",
+    "库奇": "库奇",
+    "Diana": "黛安娜",
+    "diana": "黛安娜",
+    "黛安娜": "黛安娜",
+    "Ezreal": "伊泽瑞尔",
+    "ezreal": "伊泽瑞尔",
+    "伊泽瑞尔": "伊泽瑞尔",
+    "Fiora": "菲奥娜",
+    "fiora": "菲奥娜",
+    "菲奥娜": "菲奥娜",
+    "Fizz": "菲兹",
+    "fizz": "菲兹",
+    "菲兹": "菲兹",
+    "Galio": "加里奥",
+    "galio": "加里奥",
+    "加里奥": "加里奥",
+    "Gnar": "纳尔",
+    "gnar": "纳尔",
+    "纳尔": "纳尔",
+    "Gragas": "古拉加斯",
+    "gragas": "古拉加斯",
+    "古拉加斯": "古拉加斯",
+    "Graves": "格雷福斯",
+    "graves": "格雷福斯",
+    "格雷福斯": "格雷福斯",
+    "Gwen": "格温",
+    "gwen": "格温",
+    "格温": "格温",
+    "Illaoi": "俄洛伊",
+    "illaoi": "俄洛伊",
+    "俄洛伊": "俄洛伊",
+    "Jax": "贾克斯",
+    "jax": "贾克斯",
+    "贾克斯": "贾克斯",
+    "Jhin": "烬",
+    "jhin": "烬",
+    "烬": "烬",
+    "Jinx": "金克丝",
+    "jinx": "金克丝",
+    "金克丝": "金克丝",
+    "Kaisa": "卡莎",
+    "kaisa": "卡莎",
+    "卡莎": "卡莎",
+    "Karma": "卡尔玛",
+    "karma": "卡尔玛",
+    "卡尔玛": "卡尔玛",
+    "Kindred": "千珏",
+    "kindred": "千珏",
+    "千珏": "千珏",
+    "Leblanc": "乐芙兰",
+    "leblanc": "乐芙兰",
+    "乐芙兰": "乐芙兰",
+    "Leona": "蕾欧娜",
+    "leona": "蕾欧娜",
+    "蕾欧娜": "蕾欧娜",
+    "Lissandra": "丽桑卓",
+    "lissandra": "丽桑卓",
+    "丽桑卓": "丽桑卓",
+    "Lulu": "璐璐",
+    "lulu": "璐璐",
+    "璐璐": "璐璐",
+    "Maokai": "茂凯",
+    "maokai": "茂凯",
+    "茂凯": "茂凯",
+    "MasterYi": "易大师",
+    "masteryi": "易大师",
+    "易大师": "易大师",
+    "Milio": "米利欧",
+    "milio": "米利欧",
+    "米利欧": "米利欧",
+    "MissFortune": "厄运小姐",
+    "missfortune": "厄运小姐",
+    "厄运小姐": "厄运小姐",
+    "Mordekaiser": "莫德凯撒",
+    "mordekaiser": "莫德凯撒",
+    "莫德凯撒": "莫德凯撒",
+    "Morgana": "莫甘娜",
+    "morgana": "莫甘娜",
+    "莫甘娜": "莫甘娜",
+    "Nami": "娜美",
+    "nami": "娜美",
+    "娜美": "娜美",
+    "Nasus": "内瑟斯",
+    "nasus": "内瑟斯",
+    "内瑟斯": "内瑟斯",
+    "Nunu": "努努",
+    "nunu": "努努",
+    "努努": "努努",
+    "Ornn": "奥恩",
+    "ornn": "奥恩",
+    "奥恩": "奥恩",
+    "Pantheon": "潘森",
+    "pantheon": "潘森",
+    "潘森": "潘森",
+    "Poppy": "波比",
+    "poppy": "波比",
+    "波比": "波比",
+    "Pyke": "派克",
+    "pyke": "派克",
+    "派克": "派克",
+    "Rammus": "拉莫斯",
+    "rammus": "拉莫斯",
+    "拉莫斯": "拉莫斯",
+    "RekSai": "雷克塞",
+    "reksai": "雷克塞",
+    "雷克塞": "雷克塞",
+    "Rhaast": "拉亚斯特",
+    "rhaast": "拉亚斯特",
+    "拉亚斯特": "拉亚斯特",
+    "Riven": "锐雯",
+    "riven": "锐雯",
+    "锐雯": "锐雯",
+    "Samira": "莎弥拉",
+    "samira": "莎弥拉",
+    "莎弥拉": "莎弥拉",
+    "Shen": "慎",
+    "shen": "慎",
+    "慎": "慎",
+    "Sona": "娑娜",
+    "sona": "娑娜",
+    "娑娜": "娑娜",
+    "TahmKench": "塔姆·肯奇",
+    "tahmkench": "塔姆·肯奇",
+    "塔姆·肯奇": "塔姆·肯奇",
+    "Talon": "泰隆",
+    "talon": "泰隆",
+    "泰隆": "泰隆",
+    "Teemo": "提莫",
+    "teemo": "提莫",
+    "提莫": "提莫",
+    "TwistedFate": "崔斯特",
+    "twistedfate": "崔斯特",
+    "崔斯特": "崔斯特",
+    "Urgot": "厄加特",
+    "urgot": "厄加特",
+    "厄加特": "厄加特",
+    "Veigar": "维迦",
+    "veigar": "维迦",
+    "维迦": "维迦",
+    "Vex": "薇古丝",
+    "vex": "薇古丝",
+    "薇古丝": "薇古丝",
+    "Viktor": "维克托",
+    "viktor": "维克托",
+    "维克托": "维克托",
+    "Xayah": "霞",
+    "xayah": "霞",
+    "霞": "霞",
+    "Zed": "劫",
+    "zed": "劫",
+    "劫": "劫",
+    "Zoe": "佐伊",
+    "zoe": "佐伊",
+    "佐伊": "佐伊"
+  }
+}

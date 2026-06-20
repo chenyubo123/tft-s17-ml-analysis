@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TFT S17 星神赛季 - 机器学习分析</title>
+<style>
+  :root {
+    --bg: #0d1117;
+    --card: #161b22;
+    --border: #30363d;
+    --text: #c9d1d9;
+    --dim: #8b949e;
+    --green: #3fb950;
+    --red: #f85149;
+    --blue: #58a6ff;
+    --purple: #bc8cff;
+    --gold: #d2991d;
+    --tab-active: #1f6feb;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family: -apple-system, 'Microsoft YaHei', sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; }
+  
+  /* header */
+  .header { text-align: center; padding: 40px 20px 30px; border-bottom: 1px solid var(--border); }
+  .header h1 { font-size: 2em; margin-bottom: 8px; }
+  .header .sub { color: var(--dim); font-size: 0.95em; }
+  
+  /* tabs */
+  .tabs { display: flex; justify-content: center; gap: 4px; padding: 16px 20px; flex-wrap: wrap; }
+  .tab-btn { padding: 10px 24px; border: 1px solid var(--border); border-radius: 8px 8px 0 0; background: var(--card); color: var(--dim); cursor: pointer; font-size: 0.95em; transition: all 0.2s; }
+  .tab-btn:hover { color: var(--text); }
+  .tab-btn.active { background: var(--tab-active); color: #fff; border-color: var(--tab-active); }
+  
+  .tab-content { display: none; max-width: 1200px; margin: 0 auto; padding: 20px; }
+  .tab-content.active { display: block; }
+  
+  /* sections */
+  .section { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 24px; margin-bottom: 24px; }
+  .section h2 { font-size: 1.3em; margin-bottom: 16px; color: var(--blue); }
+  .section h3 { font-size: 1.05em; margin: 16px 0 10px; }
+  
+  /* stats */
+  .stat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 12px; margin-bottom: 20px; }
+  .stat-card { background: #0d1117; border: 1px solid var(--border); border-radius: 8px; padding: 14px; text-align: center; }
+  .stat-card .val { font-size: 1.5em; font-weight: bold; }
+  .stat-card .lbl { font-size: 0.8em; color: var(--dim); margin-top: 4px; }
+  
+  /* cluster card */
+  .cluster-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 16px; }
+  .cluster-card { background: #0d1117; border: 1px solid var(--border); border-radius: 10px; padding: 16px; transition: border-color 0.2s; }
+  .cluster-card:hover { border-color: var(--blue); }
+  .cluster-card .c-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
+  .cluster-card .c-id { font-weight: bold; font-size: 1.1em; }
+  .cluster-card .c-wr { font-size: 1.4em; font-weight: bold; }
+  .cluster-card .c-stats { display: flex; gap: 16px; margin-bottom: 12px; font-size: 0.85em; color: var(--dim); }
+  .cluster-card .c-traits, .cluster-card .c-units { margin-top: 8px; }
+  .cluster-card .tag { display: inline-block; padding: 3px 8px; border-radius: 12px; font-size: 0.78em; margin: 2px 4px 2px 0; }
+  .tag-trait { background: rgba(88,166,255,0.15); color: var(--blue); }
+  .tag-unit { background: rgba(188,140,255,0.15); color: var(--purple); }
+  .tag-hot { background: rgba(63,185,80,0.15); color: var(--green); }
+  .tag-cold { background: rgba(248,81,73,0.15); color: var(--red); }
+  
+  /* image */
+  .img-box { text-align: center; margin: 16px 0; }
+  .img-box img { max-width: 100%; border-radius: 8px; border: 1px solid var(--border); }
+  
+  /* search */
+  .search-wrap { position: relative; max-width: 500px; margin: 0 auto 20px; }
+  .search-wrap input { width: 100%; padding: 14px 20px; font-size: 1.1em; background: #0d1117; border: 2px solid var(--border); border-radius: 12px; color: var(--text); outline: none; transition: border-color 0.2s; }
+  .search-wrap input:focus { border-color: var(--blue); }
+  .search-wrap .hint { position: absolute; right: 16px; top: 50%; transform: translateY(-50%); color: var(--dim); font-size: 0.8em; pointer-events: none; }
+  
+  /* dropdown */
+  .dropdown { position: absolute; top: 100%; left: 0; right: 0; background: var(--card); border: 1px solid var(--border); border-radius: 0 0 10px 10px; max-height: 240px; overflow-y: auto; z-index: 10; display: none; }
+  .dropdown.show { display: block; }
+  .dropdown .item { padding: 10px 16px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; }
+  .dropdown .item:hover { background: rgba(88,166,255,0.1); }
+  .dropdown .item .name { font-weight: 500; }
+  .dropdown .item .count { color: var(--dim); font-size: 0.82em; }
+  
+  /* results */
+  .result-card { background: #0d1117; border: 1px solid var(--border); border-radius: 12px; padding: 20px; margin-top: 20px; }
+  .result-card .r-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; flex-wrap: wrap; gap: 8px; }
+  .result-card .r-name { font-size: 1.4em; font-weight: bold; }
+  .result-card .r-warn { color: var(--red); font-size: 0.85em; padding: 4px 10px; border: 1px solid var(--red); border-radius: 6px; display: inline-block; }
+  .result-card .r-total { color: var(--dim); font-size: 0.85em; }
+  
+  .item-table { width: 100%; border-collapse: collapse; font-size: 0.9em; }
+  .item-table th { text-align: left; padding: 8px 12px; border-bottom: 2px solid var(--border); color: var(--dim); font-weight: 600; }
+  .item-table td { padding: 10px 12px; border-bottom: 1px solid var(--border); }
+  .item-table tr:hover td { background: rgba(88,166,255,0.05); }
+  
+  .bis-box { margin-top: 20px; padding: 16px; border-radius: 10px; background: rgba(63,185,80,0.08); border: 1px solid rgba(63,185,80,0.25); }
+  .bis-box h3 { color: var(--green); margin-bottom: 12px; }
+  .bis-items { display: flex; gap: 12px; flex-wrap: wrap; }
+  .bis-item { padding: 10px 18px; border-radius: 10px; font-weight: 600; font-size: 0.95em; text-align: center; min-width: 100px; }
+  
+  .no-result { text-align: center; padding: 40px; color: var(--dim); }
+  
+  /* safety */
+  .safety { padding: 6px 12px; border-radius: 6px; font-size: 0.75em; font-weight: 600; }
+  .s-good { background: rgba(63,185,80,0.15); color: var(--green); }
+  .s-ok { background: rgba(210,153,29,0.15); color: var(--gold); }
+  .s-bad { background: rgba(248,81,73,0.15); color: var(--red); }
+  
+  /* footer */
+  .footer { text-align: center; padding: 30px; color: var(--dim); font-size: 0.82em; border-top: 1px solid var(--border); margin-top: 40px; }
+  
+  @media (max-width: 640px) {
+    .header h1 { font-size: 1.4em; }
+    .cluster-grid { grid-template-columns: 1fr; }
+    .tab-btn { padding: 8px 14px; font-size: 0.85em; }
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>TFT S17 星神赛季 · 机器学习分析</h1>
+  <div class="sub">数据：Riot API 韩服 Challenger / Grandmaster / Master · <span id="matchCount">--</span> 局真实对局</div>
+</div>
+
+<div class="tabs">
+  <button class="tab-btn active" onclick="switchTab('tab1', this)">Meta 阵容聚类</button>
+  <button class="tab-btn" onclick="switchTab('tab2', this)">装备协同过滤</button>
+  <button class="tab-btn" onclick="switchTab('tab3', this)">英雄装备查询</button>
+</div>
+
+<!-- ========== Tab 1: K-Means 聚类 ========== -->
+<div id="tab1" class="tab-content active">
+  <div class="section">
+    <h2>K-Means 聚类 (K=10) — 发现当前版本主流阵容</h2>
+    <p style="color:var(--dim);margin-bottom:16px;">将每位玩家的最终阵容（42维羁绊向量）聚为10组，每组代表一种主流玩法</p>
+    
+    <div id="clusterStats" class="stat-grid"></div>
+    
+    <div class="img-box"><img src="figures/clustering_winrates.png" alt="各簇前四率"></div>
+    <div class="img-box"><img src="figures/clustering_pca.png" alt="PCA降维可视化"></div>
+    <div class="img-box"><img src="figures/cluster_sizes.png" alt="簇大小分布"></div>
+
+    <h3>各簇详情</h3>
+    <div id="clusterCards" class="cluster-grid"></div>
+  </div>
+</div>
+
+<!-- ========== Tab 2: 协同过滤 ========== -->
+<div id="tab2" class="tab-content">
+  <div class="section">
+    <h2>Item-Based 协同过滤 — 棋子×装备 胜率矩阵</h2>
+    <p style="color:var(--dim);margin-bottom:16px;">构建棋子×装备前四率矩阵，用余弦相似度寻找装备使用模式相近的棋子，综合打分推荐最佳装备</p>
+    <div class="img-box"><img src="figures/cf_heatmap.png" alt="棋子×装备前四率热力图"></div>
+    <div class="img-box"><img src="figures/cf_similarity.png" alt="棋子相似度矩阵"></div>
+    <div class="img-box"><img src="figures/cf_recommendations.png" alt="各棋子推荐装备卡片"></div>
+  </div>
+</div>
+
+<!-- ========== Tab 3: 英雄装备查询 ========== -->
+<div id="tab3" class="tab-content">
+  <div class="section">
+    <h2>英雄装备查询 — 基于496局真实数据</h2>
+    <p style="color:var(--dim);margin-bottom:20px;">输入英雄中文名或英文名，查看该英雄在各装备下的前四率、平均排名、出场次数及推荐三件套</p>
+    
+    <div class="search-wrap">
+      <input type="text" id="searchInput" placeholder="搜英雄...（如 亚托克斯、卡莎、Aatrox）" autocomplete="off" oninput="onSearchInput()" onfocus="onSearchInput()">
+      <span class="hint" id="searchHint"></span>
+      <div class="dropdown" id="dropdown"></div>
+    </div>
+    
+    <div id="searchResult"></div>
+  </div>
+</div>
+
+<div class="footer">
+  TFT S17 星神赛季数据分析 · 机器学习期末报告 · Riot API 韩服高分段真实数据<br>
+  陈宇博 20231060048 · 智能科学与技术
+</div>
+
+<!-- data loader -->
+<script>
+// ========== 全局数据 ==========
+let CLUSTERS = null;
+let CF_DATA = null;
+
+async function loadData() {
+  const [cResp, cfResp] = await Promise.all([
+    fetch("data/cluster_data.json"),
+    fetch("data/cf_data.json"),
+  ]);
+  CLUSTERS = await cResp.json();
+  CF_DATA = await cfResp.json();
+  
+  document.getElementById("matchCount").textContent = CLUSTERS.nMatches;
+  renderClusterStats();
+  renderClusterCards();
+}
+
+function safetyLabel(top4) {
+  if (top4 >= 60) return ['s-good', '强力推荐'];
+  if (top4 >= 50) return ['s-ok', '可用'];
+  return ['s-bad', '不推荐'];
+}
+
+// ========== Tab 切换 ==========
+function switchTab(tabId, btn) {
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+  btn.classList.add('active');
+  document.getElementById(tabId).classList.add('active');
+}
+
+// ========== 聚类数据渲染 ==========
+function renderClusterStats() {
+  let html = '<div class="stat-card"><div class="val" style="color:var(--blue)">' + CLUSTERS.nMatches + '</div><div class="lbl">对局数</div></div>';
+  html += '<div class="stat-card"><div class="val" style="color:var(--blue)">' + CLUSTERS.nClusters + '</div><div class="lbl">聚类簇数</div></div>';
+  const avgWR = (CLUSTERS.clusters.reduce((s, c) => s + c.top4 * c.n, 0) / CLUSTERS.nRecords).toFixed(1);
+  html += '<div class="stat-card"><div class="val" style="color:var(--green)">' + avgWR + '%</div><div class="lbl">总前四率</div></div>';
+  const topCluster = [...CLUSTERS.clusters].sort((a, b) => b.top4 - a.top4)[0];
+  html += '<div class="stat-card"><div class="val" style="color:var(--green)">C' + topCluster.id + ': ' + topCluster.top4.toFixed(1) + '%</div><div class="lbl">最强簇</div></div>';
+  document.getElementById("clusterStats").innerHTML = html;
+}
+
+function renderClusterCards() {
+  const sorted = [...CLUSTERS.clusters].sort((a, b) => b.top4 - a.top4);
+  const html = sorted.map(c => {
+    const [sClass, sText] = safetyLabel(c.top4);
+    const traitTags = c.traits.map(t => '<span class="tag tag-trait">' + t.name + ' ' + t.pct + '%</span>').join('');
+    const unitTags = c.units.map(u => '<span class="tag tag-unit">' + (u.cn || u.name) + '</span>').join('');
+    
+    return '<div class="cluster-card">'
+      + '<div class="c-header">'
+        + '<div class="c-id">簇 ' + c.id + '</div>'
+        + '<div class="c-wr" style="color:' + (c.top4 >= 50 ? 'var(--green)' : 'var(--red)') + '">' + c.top4.toFixed(1) + '%</div>'
+      + '</div>'
+      + '<div class="c-stats">'
+        + '<span>' + c.n + ' 玩家</span>'
+        + '<span>均排 ' + c.avgPlace.toFixed(2) + '</span>'
+        + '<span class="safety ' + sClass + '">' + sText + '</span>'
+      + '</div>'
+      + '<div class="c-traits"><strong style="color:var(--dim)">核心羁绊:</strong><br>' + traitTags + '</div>'
+      + '<div class="c-units" style="margin-top:6px"><strong style="color:var(--dim)">常用棋子:</strong><br>' + unitTags + '</div>'
+      + '</div>';
+  }).join('');
+  document.getElementById("clusterCards").innerHTML = html;
+}
+
+// ========== 搜索 ==========
+function onSearchInput() {
+  const q = document.getElementById("searchInput").value.trim().toLowerCase();
+  const dd = document.getElementById("dropdown");
+  const hint = document.getElementById("searchHint");
+  const result = document.getElementById("searchResult");
+  
+  if (!CF_DATA) { dd.classList.remove("show"); return; }
+  
+  if (q.length === 0) {
+    // 展示所有英雄
+    const allKeys = Object.keys(CF_DATA.champItems).sort();
+    const safe = allKeys.slice(0, 15);
+    let html = safe.map(k => {
+      const total = CF_DATA.champTotal[k] || 0;
+      return '<div class="item" onclick="selectChamp(\'' + k + '\')"><span class="name">' + k + '</span><span class="count">' + total + ' 次出场</span></div>';
+    }).join('');
+    if (allKeys.length > 15) html += '<div class="item" style="color:var(--dim)">... 共 ' + allKeys.length + ' 个英雄，继续输入筛选</div>';
+    dd.innerHTML = html;
+    dd.classList.add("show");
+    hint.textContent = allKeys.length + ' 个英雄';
+    return;
+  }
+  
+  // 中文/英文匹配
+  const matches = [];
+  for (const [key, val] of Object.entries(CF_DATA.searchIndex)) {
+    if (key.toLowerCase().includes(q) && !matches.includes(val)) matches.push(val);
+  }
+  // 同时检查 champion names
+  for (const k of Object.keys(CF_DATA.champItems)) {
+    if (k.toLowerCase().includes(q) && !matches.includes(k)) matches.push(k);
+  }
+  
+  if (matches.length === 0) {
+    dd.innerHTML = '<div class="item" style="color:var(--dim)">未找到匹配的英雄</div>';
+    dd.classList.add("show");
+    hint.textContent = '无结果';
+    return;
+  }
+  
+  if (matches.length === 1) {
+    dd.classList.remove("show");
+    selectChamp(matches[0]);
+    hint.textContent = '1 个匹配';
+    return;
+  }
+  
+  dd.innerHTML = matches.map(k => '<div class="item" onclick="selectChamp(\'' + k + '\')"><span class="name">' + k + '</span><span class="count">' + (CF_DATA.champTotal[k] || 0) + ' 次出场</span></div>').join('');
+  dd.classList.add("show");
+  hint.textContent = matches.length + ' 个匹配';
+}
+
+function selectChamp(key) {
+  document.getElementById("searchInput").value = key;
+  document.getElementById("dropdown").classList.remove("show");
+  document.getElementById("searchHint").textContent = '';
+  renderChampResult(key);
+}
+
+function renderChampResult(key) {
+  const items = CF_DATA.champItems[key];
+  const total = CF_DATA.champTotal[key] || 0;
+  const resultDiv = document.getElementById("searchResult");
+  
+  if (!items || items.length === 0) {
+    resultDiv.innerHTML = '<div class="no-result">该英雄无装备数据</div>';
+    return;
+  }
+  
+  let warning = '';
+  if (total < 10) {
+    warning = '<div style="padding:12px 16px;background:rgba(248,81,73,0.1);border:1px solid var(--red);border-radius:8px;margin-bottom:16px;color:var(--red);font-weight:bold;">' +
+      '⚠️ 样本量不足！该英雄总装备出场仅 ' + total + ' 次（少于10次），结果仅供参考，可信度低' +
+      '</div>';
+  } else if (total < 30) {
+    warning = '<div style="padding:12px 16px;background:rgba(210,153,29,0.1);border:1px solid var(--gold);border-radius:8px;margin-bottom:16px;color:var(--gold);font-weight:bold;">' +
+      '⚠️ 样本量偏少！该英雄总装备出场 ' + total + ' 次（少于30次），结果可信度有限' +
+      '</div>';
+  }
+  
+  // 按CF得分排序
+  const sorted = [...items].sort((a, b) => b.score - a.score);
+  const top3 = sorted.slice(0, 3);
+  
+  let tableRows = sorted.map(r => {
+    let evalClass, evalText;
+    if (r.top4 >= '60%' || (typeof r.top4 === 'number' && r.top4 >= 60)) { evalClass = 's-good'; evalText = '强力推荐'; }
+    else if (r.top4 >= '50%' || (typeof r.top4 === 'number' && r.top4 >= 50)) { evalClass = 's-ok'; evalText = '可用'; }
+    else if (r.top4 >= '40%' || (typeof r.top4 === 'number' && r.top4 >= 40)) { evalClass = ''; evalText = '一般'; }
+    else { evalClass = 's-bad'; evalText = '不推荐'; }
+    
+    const top4Display = typeof r.top4 === 'string' ? r.top4 : r.top4.toFixed(1) + '%';
+    
+    return '<tr>' +
+      '<td>' + r.rank + '</td>' +
+      '<td><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:' + r.color + ';margin-right:6px;vertical-align:middle;"></span>' + (r.itemCn || r.item) + '</td>' +
+      '<td style="font-weight:600;color:' + (parseFloat(top4Display) >= 50 ? 'var(--green)' : 'var(--red)') + '">' + top4Display + '</td>' +
+      '<td>' + (r.avgPlace || '-') + '</td>' +
+      '<td>' + r.games + '</td>' +
+      '<td>' + r.score.toFixed(2) + '</td>' +
+      '<td><span class="safety ' + evalClass + '">' + evalText + '</span></td>' +
+      '</tr>';
+  }).join('');
+  
+  let bisHtml = top3.map(r => {
+    const top4Display = typeof r.top4 === 'string' ? r.top4 : r.top4.toFixed(1) + '%';
+    return '<div class="bis-item" style="background:' + r.color + '33;color:' + r.color + ';border:2px solid ' + r.color + '55">' +
+      (r.itemCn || r.item) +
+      '<div style="font-size:0.7em;opacity:0.8;margin-top:2px;">' + top4Display + ' · ' + r.games + '局</div>' +
+      '</div>';
+  }).join('');
+  
+  resultDiv.innerHTML = 
+    '<div class="result-card">' +
+      '<div class="r-header">' +
+        '<div class="r-name">' + key + '</div>' +
+        (total < 30 
+          ? '<span class="r-warn">' + (total < 10 ? '样本不足 (<10)' : '样本偏少 (<30)') + '</span>'
+          : '<span class="r-total">总出场 ' + total + ' 次</span>') +
+      '</div>' +
+      warning +
+      '<div class="bis-box">' +
+        '<h3>📦 推荐三件套 (BIS)</h3>' +
+        '<div class="bis-items">' + bisHtml + '</div>' +
+      '</div>' +
+      '<table class="item-table" style="margin-top:16px;">' +
+        '<thead><tr><th>排名</th><th>装备</th><th>前四率</th><th>均排</th><th>出场</th><th>评分</th><th>评价</th></tr></thead>' +
+        '<tbody>' + tableRows + '</tbody>' +
+      '</table>' +
+    '</div>';
+}
+
+// 页面外点击关闭下拉
+document.addEventListener("click", function(e) {
+  if (!e.target.closest(".search-wrap")) {
+    document.getElementById("dropdown").classList.remove("show");
+  }
+});
+
+// 启动
+loadData();
+</script>
+
+</body>
+</html>

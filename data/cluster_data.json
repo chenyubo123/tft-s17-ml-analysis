@@ -1,0 +1,707 @@
+{
+  "nClusters": 10,
+  "nMatches": 496,
+  "nRecords": 3926,
+  "clusters": [
+    {
+      "id": 0,
+      "n": 127,
+      "top4": 55.1,
+      "avgPlace": 4.25,
+      "traits": [
+        {
+          "name": "Stargazer_Mountain",
+          "avg": 4.5,
+          "pct": 100.0
+        },
+        {
+          "name": "ResistTank",
+          "avg": 1.0,
+          "pct": 94.0
+        },
+        {
+          "name": "DRX",
+          "avg": 0.9,
+          "pct": 84.0
+        },
+        {
+          "name": "HPTank",
+          "avg": 0.9,
+          "pct": 84.0
+        },
+        {
+          "name": "RangedTrait",
+          "avg": 0.7,
+          "pct": 61.0
+        },
+        {
+          "name": "ShieldTank",
+          "avg": 0.6,
+          "pct": 58.0
+        }
+      ],
+      "units": [
+        {
+          "name": "Jax",
+          "cn": "贾克斯",
+          "avgStars": 2.0,
+          "pct": 92.0
+        },
+        {
+          "name": "Maokai",
+          "cn": "茂凯",
+          "avgStars": 1.6,
+          "pct": 83.0
+        },
+        {
+          "name": "Aatrox",
+          "cn": "亚托克斯",
+          "avgStars": 1.6,
+          "pct": 83.0
+        },
+        {
+          "name": "Xayah",
+          "cn": "霞",
+          "avgStars": 1.2,
+          "pct": 66.0
+        },
+        {
+          "name": "Nunu",
+          "cn": "努努",
+          "avgStars": 1.1,
+          "pct": 67.0
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "n": 337,
+      "top4": 46.9,
+      "avgPlace": 4.65,
+      "traits": [
+        {
+          "name": "DarkStar",
+          "avg": 2.4,
+          "pct": 96.0
+        },
+        {
+          "name": "HPTank",
+          "avg": 1.1,
+          "pct": 85.0
+        },
+        {
+          "name": "JhinUniqueTrait",
+          "avg": 0.6,
+          "pct": 61.0
+        },
+        {
+          "name": "Timebreaker",
+          "avg": 0.6,
+          "pct": 34.0
+        },
+        {
+          "name": "APTrait",
+          "avg": 0.6,
+          "pct": 56.0
+        },
+        {
+          "name": "ShieldTank",
+          "avg": 0.6,
+          "pct": 54.0
+        }
+      ],
+      "units": [
+        {
+          "name": "Chogath",
+          "cn": "科加斯",
+          "avgStars": 2.3,
+          "pct": 89.0
+        },
+        {
+          "name": "Lissandra",
+          "cn": "丽桑卓",
+          "avgStars": 1.8,
+          "pct": 71.0
+        },
+        {
+          "name": "Mordekaiser",
+          "cn": "莫德凯撒",
+          "avgStars": 1.6,
+          "pct": 81.0
+        },
+        {
+          "name": "Pantheon",
+          "cn": "潘森",
+          "avgStars": 1.3,
+          "pct": 64.0
+        },
+        {
+          "name": "Kaisa",
+          "cn": "卡莎",
+          "avgStars": 1.3,
+          "pct": 66.0
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "n": 778,
+      "top4": 53.3,
+      "avgPlace": 4.32,
+      "traits": [
+        {
+          "name": "SpaceGroove",
+          "avg": 2.4,
+          "pct": 89.0
+        },
+        {
+          "name": "ShieldTank",
+          "avg": 0.8,
+          "pct": 73.0
+        },
+        {
+          "name": "ResistTank",
+          "avg": 0.8,
+          "pct": 73.0
+        },
+        {
+          "name": "BlitzcrankUniqueTrait",
+          "avg": 0.6,
+          "pct": 63.0
+        },
+        {
+          "name": "RangedTrait",
+          "avg": 0.6,
+          "pct": 52.0
+        },
+        {
+          "name": "HPTank",
+          "avg": 0.5,
+          "pct": 52.0
+        }
+      ],
+      "units": [
+        {
+          "name": "Ornn",
+          "cn": "奥恩",
+          "avgStars": 1.4,
+          "pct": 63.0
+        },
+        {
+          "name": "Samira",
+          "cn": "莎弥拉",
+          "avgStars": 1.2,
+          "pct": 54.0
+        },
+        {
+          "name": "Gwen",
+          "cn": "格温",
+          "avgStars": 1.0,
+          "pct": 53.0
+        },
+        {
+          "name": "Nami",
+          "cn": "娜美",
+          "avgStars": 1.0,
+          "pct": 59.0
+        },
+        {
+          "name": "Nasus",
+          "cn": "内瑟斯",
+          "avgStars": 1.0,
+          "pct": 53.0
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "n": 681,
+      "top4": 48.5,
+      "avgPlace": 4.64,
+      "traits": [
+        {
+          "name": "HPTank",
+          "avg": 1.6,
+          "pct": 93.0
+        },
+        {
+          "name": "MeleeTrait",
+          "avg": 1.4,
+          "pct": 95.0
+        },
+        {
+          "name": "ASTrait",
+          "avg": 1.2,
+          "pct": 82.0
+        },
+        {
+          "name": "DRX",
+          "avg": 1.0,
+          "pct": 91.0
+        },
+        {
+          "name": "PsyOps",
+          "avg": 0.6,
+          "pct": 53.0
+        },
+        {
+          "name": "TahmKenchUniqueTrait",
+          "avg": 0.5,
+          "pct": 55.0
+        }
+      ],
+      "units": [
+        {
+          "name": "Belveth",
+          "cn": "卑尔维斯",
+          "avgStars": 1.8,
+          "pct": 83.0
+        },
+        {
+          "name": "Maokai",
+          "cn": "茂凯",
+          "avgStars": 1.7,
+          "pct": 88.0
+        },
+        {
+          "name": "Urgot",
+          "cn": "厄加特",
+          "avgStars": 1.3,
+          "pct": 65.0
+        },
+        {
+          "name": "Kindred",
+          "cn": "千珏",
+          "avgStars": 1.2,
+          "pct": 69.0
+        },
+        {
+          "name": "Akali",
+          "cn": "阿卡丽",
+          "avgStars": 1.2,
+          "pct": 52.0
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "n": 681,
+      "top4": 52.3,
+      "avgPlace": 4.38,
+      "traits": [
+        {
+          "name": "ShieldTank",
+          "avg": 1.8,
+          "pct": 98.0
+        },
+        {
+          "name": "FlexTrait",
+          "avg": 1.1,
+          "pct": 89.0
+        },
+        {
+          "name": "SummonTrait",
+          "avg": 1.1,
+          "pct": 93.0
+        },
+        {
+          "name": "ManaTrait",
+          "avg": 1.0,
+          "pct": 83.0
+        },
+        {
+          "name": "DarkStar",
+          "avg": 0.9,
+          "pct": 92.0
+        },
+        {
+          "name": "SpaceGroove",
+          "avg": 0.9,
+          "pct": 83.0
+        }
+      ],
+      "units": [
+        {
+          "name": "Illaoi",
+          "cn": "俄洛伊",
+          "avgStars": 1.8,
+          "pct": 95.0
+        },
+        {
+          "name": "Mordekaiser",
+          "cn": "莫德凯撒",
+          "avgStars": 1.6,
+          "pct": 89.0
+        },
+        {
+          "name": "Karma",
+          "cn": "卡尔玛",
+          "avgStars": 1.4,
+          "pct": 82.0
+        },
+        {
+          "name": "Sona",
+          "cn": "娑娜",
+          "avgStars": 1.2,
+          "pct": 81.0
+        },
+        {
+          "name": "Nunu",
+          "cn": "努努",
+          "avgStars": 1.2,
+          "pct": 69.0
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "n": 112,
+      "top4": 54.5,
+      "avgPlace": 4.27,
+      "traits": [
+        {
+          "name": "Mecha",
+          "avg": 2.3,
+          "pct": 100.0
+        },
+        {
+          "name": "ManaTrait",
+          "avg": 1.0,
+          "pct": 83.0
+        },
+        {
+          "name": "FlexTrait",
+          "avg": 1.0,
+          "pct": 92.0
+        },
+        {
+          "name": "DarkStar",
+          "avg": 0.7,
+          "pct": 71.0
+        },
+        {
+          "name": "HPTank",
+          "avg": 0.6,
+          "pct": 59.0
+        },
+        {
+          "name": "TahmKenchUniqueTrait",
+          "avg": 0.6,
+          "pct": 59.0
+        }
+      ],
+      "units": [
+        {
+          "name": "Galio",
+          "cn": "加里奥",
+          "avgStars": 2.0,
+          "pct": 100.0
+        },
+        {
+          "name": "AurelionSol",
+          "cn": "奥瑞利安·索尔",
+          "avgStars": 1.9,
+          "pct": 99.0
+        },
+        {
+          "name": "Karma",
+          "cn": "卡尔玛",
+          "avgStars": 1.6,
+          "pct": 88.0
+        },
+        {
+          "name": "Urgot",
+          "cn": "厄加特",
+          "avgStars": 1.3,
+          "pct": 69.0
+        },
+        {
+          "name": "Mordekaiser",
+          "cn": "莫德凯撒",
+          "avgStars": 1.1,
+          "pct": 64.0
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "n": 655,
+      "top4": 49.3,
+      "avgPlace": 4.55,
+      "traits": [
+        {
+          "name": "Astronaut",
+          "avg": 1.8,
+          "pct": 83.0
+        },
+        {
+          "name": "ResistTank",
+          "avg": 1.0,
+          "pct": 97.0
+        },
+        {
+          "name": "FlexTrait",
+          "avg": 0.8,
+          "pct": 64.0
+        },
+        {
+          "name": "Timebreaker",
+          "avg": 0.7,
+          "pct": 60.0
+        },
+        {
+          "name": "Fateweaver",
+          "avg": 0.6,
+          "pct": 61.0
+        },
+        {
+          "name": "AssassinTrait",
+          "avg": 0.6,
+          "pct": 48.0
+        }
+      ],
+      "units": [
+        {
+          "name": "Rammus",
+          "cn": "拉莫斯",
+          "avgStars": 1.5,
+          "pct": 82.0
+        },
+        {
+          "name": "Poppy",
+          "cn": "波比",
+          "avgStars": 1.4,
+          "pct": 71.0
+        },
+        {
+          "name": "Corki",
+          "cn": "库奇",
+          "avgStars": 1.3,
+          "pct": 69.0
+        },
+        {
+          "name": "Milio",
+          "cn": "米利欧",
+          "avgStars": 1.1,
+          "pct": 60.0
+        },
+        {
+          "name": "Fizz",
+          "cn": "菲兹",
+          "avgStars": 1.1,
+          "pct": 59.0
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "n": 181,
+      "top4": 29.8,
+      "avgPlace": 5.45,
+      "traits": [
+        {
+          "name": "ShieldTank",
+          "avg": 1.5,
+          "pct": 96.0
+        },
+        {
+          "name": "ADMIN",
+          "avg": 1.4,
+          "pct": 92.0
+        },
+        {
+          "name": "SummonTrait",
+          "avg": 1.1,
+          "pct": 80.0
+        },
+        {
+          "name": "FlexTrait",
+          "avg": 0.9,
+          "pct": 77.0
+        },
+        {
+          "name": "DarkStar",
+          "avg": 0.6,
+          "pct": 56.0
+        },
+        {
+          "name": "SpaceGroove",
+          "avg": 0.4,
+          "pct": 40.0
+        }
+      ],
+      "units": [
+        {
+          "name": "Leona",
+          "cn": "蕾欧娜",
+          "avgStars": 2.1,
+          "pct": 85.0
+        },
+        {
+          "name": "Illaoi",
+          "cn": "俄洛伊",
+          "avgStars": 2.0,
+          "pct": 96.0
+        },
+        {
+          "name": "Leblanc",
+          "cn": "乐芙兰",
+          "avgStars": 1.2,
+          "pct": 72.0
+        },
+        {
+          "name": "Diana",
+          "cn": "黛安娜",
+          "avgStars": 0.9,
+          "pct": 33.0
+        },
+        {
+          "name": "Aurora",
+          "cn": "奥罗拉",
+          "avgStars": 0.9,
+          "pct": 35.0
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "n": 75,
+      "top4": 49.3,
+      "avgPlace": 4.48,
+      "traits": [
+        {
+          "name": "Fateweaver",
+          "avg": 1.0,
+          "pct": 89.0
+        },
+        {
+          "name": "ResistTank",
+          "avg": 1.0,
+          "pct": 97.0
+        },
+        {
+          "name": "Stargazer_Medallion",
+          "avg": 1.0,
+          "pct": 100.0
+        },
+        {
+          "name": "DRX",
+          "avg": 1.0,
+          "pct": 93.0
+        },
+        {
+          "name": "Timebreaker",
+          "avg": 0.8,
+          "pct": 69.0
+        },
+        {
+          "name": "HPTank",
+          "avg": 0.6,
+          "pct": 63.0
+        }
+      ],
+      "units": [
+        {
+          "name": "Jax",
+          "cn": "贾克斯",
+          "avgStars": 2.6,
+          "pct": 96.0
+        },
+        {
+          "name": "TwistedFate",
+          "cn": "崔斯特",
+          "avgStars": 2.2,
+          "pct": 89.0
+        },
+        {
+          "name": "Aatrox",
+          "cn": "亚托克斯",
+          "avgStars": 2.2,
+          "pct": 95.0
+        },
+        {
+          "name": "Milio",
+          "cn": "米利欧",
+          "avgStars": 1.8,
+          "pct": 71.0
+        },
+        {
+          "name": "Lulu",
+          "cn": "璐璐",
+          "avgStars": 1.6,
+          "pct": 56.0
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "n": 299,
+      "top4": 51.5,
+      "avgPlace": 4.32,
+      "traits": [
+        {
+          "name": "DRX",
+          "avg": 1.0,
+          "pct": 95.0
+        },
+        {
+          "name": "ShenUniqueTrait",
+          "avg": 1.0,
+          "pct": 97.0
+        },
+        {
+          "name": "FioraUniqueTrait",
+          "avg": 1.0,
+          "pct": 96.0
+        },
+        {
+          "name": "MeleeTrait",
+          "avg": 1.0,
+          "pct": 94.0
+        },
+        {
+          "name": "ResistTank",
+          "avg": 0.9,
+          "pct": 93.0
+        },
+        {
+          "name": "VexUniqueTrait",
+          "avg": 0.9,
+          "pct": 91.0
+        }
+      ],
+      "units": [
+        {
+          "name": "Fiora",
+          "cn": "菲奥娜",
+          "avgStars": 1.6,
+          "pct": 96.0
+        },
+        {
+          "name": "Shen",
+          "cn": "慎",
+          "avgStars": 1.6,
+          "pct": 97.0
+        },
+        {
+          "name": "Vex",
+          "cn": "薇古丝",
+          "avgStars": 1.6,
+          "pct": 91.0
+        },
+        {
+          "name": "Graves",
+          "cn": "格雷福斯",
+          "avgStars": 1.5,
+          "pct": 90.0
+        },
+        {
+          "name": "Akali",
+          "cn": "阿卡丽",
+          "avgStars": 1.4,
+          "pct": 94.0
+        }
+      ]
+    }
+  ]
+}
